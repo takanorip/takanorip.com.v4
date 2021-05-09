@@ -1,4 +1,4 @@
-# My portfolio website ver.3
+# takanorip.com 4.0
 
 https://takanorip.com/
 
