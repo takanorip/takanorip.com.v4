@@ -1,0 +1,19 @@
+---
+layout: layouts/blogBase.njk
+permalink: /blog/
+templateClass: blog-list-content
+title: takanorip blog
+---
+
+<ul class="takanorip-blogList">
+{%- for blog in collections.blog | reverse -%}
+  <li class="takanorip-blogListItem">
+    <div class="takanorip-blogListInfo">
+      <p class="takanorip-blogListDate">{{ blog.date.toISOString().split('T')[0] }}</p>
+    </div>
+    <a class="takanorip-blogListLink" href="{{ blog.url }}">
+      {{ blog.data.title }}
+    </a>
+  </li>
+{%- endfor -%}
+</ul>

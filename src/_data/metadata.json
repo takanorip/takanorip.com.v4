@@ -1,0 +1,23 @@
+{
+  "title": "takanorip.com",
+  "title_blog": "takanorip blog",
+  "url": "https://takanorip.com/",
+  "url_blog": "https://takanorip.com/blog/",
+  "feedUrl": "https://takanorip.com/feed.xml",
+  "description": "frontend developer / interface designer",
+  "description_blog": "I am writing about my daily life.",
+  "ogp": {
+    "ogImageUrl": "https://takanorip.com/img/og-image.png",
+    "twitterCard": "summary_large_image"
+  },
+  "ogp_blog": {
+    "ogImageUrl": "https://takanorip.com/img/og-image-blog.png",
+    "twitterCard": "summary_large_image"
+  },
+  "author": {
+    "name": "takanorip",
+    "url": "https://takanorip.com/"
+  },
+  "twitter": "https://twitter.com/takanoripe",
+  "github": "https://github.com/takanorip"
+}

@@ -1,0 +1,27 @@
+---
+layout: layouts/blogBase.njk
+pagination:
+  data: collections
+  size: 1
+  alias: tag
+permalink: /blog/tags/{{ tag }}/
+filter:
+  - works
+templateClass: blog-list-content
+title: BLOG
+---
+{% set taglist = collections[ tag ] %}
+
+<h2 class="takanorip-blogTagsTitle">tag: "{{ tag }}"</h2>
+<ul class="takanorip-blogList">
+  {%- for item in taglist | reverse -%}
+    <li class="takanorip-blogListItem">
+      <div class="takanorip-blogListInfo">
+        <p class="takanorip-blogListDate">{{ item.data.date | dateFormat }}</p>
+      </div>
+      <a class="takanorip-blogListLink" href="{{ item.url }}">
+        {{ item.data.title }}
+      </a>
+    </li>
+  {%- endfor -%}
+</ul>
