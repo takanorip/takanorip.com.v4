@@ -1,40 +1,31 @@
 {
-  "name": "portfolio-version3",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "name": "~TODO~",
+  "version": "0.0.1",
   "scripts": {
-    "dev": "npx @11ty/eleventy --input=src --serve",
-    "create-teasers": "node scripts/createTeasers.js",
-    "save-algolia": "node scripts/algoliaIndex.js",
-    "build": "eleventy --input=src && yarn create-teasers && yarn save-algolia",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/takanorip/portfolio-version3.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/takanorip/portfolio-version3/issues"
-  },
-  "homepage": "https://github.com/takanorip/portfolio-version3#readme",
-  "dependencies": {
-    "@11ty/eleventy": "^0.11.1",
-    "@11ty/eleventy-plugin-rss": "^1.1.1",
-    "@takanorip/markdown-it-table-of-contents": "^0.5.2",
-    "algoliasearch": "^4.9.1",
-    "date-fns": "^2.21.3",
-    "eleventy-google-fonts": "^0.0.5",
-    "eleventy-plugin-embed-twitter": "^1.3.0",
-    "markdown-it-anchor": "^7.1.0",
-    "markdown-it-for-inline": "^0.1.1",
-    "node-html-to-image": "^3.1.0",
-    "remove-markdown": "^0.3.0"
+    "dev": "svelte-kit dev",
+    "build": "svelte-kit build",
+    "preview": "svelte-kit preview",
+    "lint": "prettier --check --plugin-search-dir=. . && eslint --ignore-path .gitignore .",
+    "format": "prettier --write --plugin-search-dir=. ."
   },
   "devDependencies": {
-    "@11ty/eleventy-plugin-syntaxhighlight": "^3.1.0"
+    "@sveltejs/kit": "next",
+    "@typescript-eslint/eslint-plugin": "^4.19.0",
+    "@typescript-eslint/parser": "^4.19.0",
+    "eslint": "^7.22.0",
+    "eslint-config-prettier": "^8.1.0",
+    "eslint-plugin-svelte3": "^3.2.0",
+    "prettier": "~2.2.1",
+    "prettier-plugin-svelte": "^2.2.0",
+    "svelte": "^3.34.0",
+    "svelte-preprocess": "^4.0.0",
+    "tslib": "^2.0.0",
+    "typescript": "^4.0.0"
+  },
+  "type": "module",
+  "dependencies": {
+    "@fontsource/fira-mono": "^4.2.2",
+    "@lukeed/uuid": "^2.0.0",
+    "cookie": "^0.4.1"
   }
 }
