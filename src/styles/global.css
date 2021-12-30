@@ -1,0 +1,29 @@
+:root {
+  --supernova: #FDC400;
+  --picton-blue: #00C0FD;
+  --azure-radiance: #007DFD;
+  --science-blue: #0064CA;
+  --forest-green: #008D18;
+  --bunker: #001319;
+  --white: #FFFFFF;
+  --nevada: #63777D;
+  --limed-spruce: #415157;
+  --wild-sand: #F4F5F6;
+  --solitude: #E3F2FE;
+  --ottoman: #000000;
+  --ottoman: #E6F4E8;
+  --alto: #DDE0E4;
+  --ease-out-expo: cubic-bezier(0.19, 1, 0.22, 1);
+  --spacing-0: 0.25rem;
+  --spacing-1: 0.5rem;
+  --spacing-2: 1rem;
+  --spacing-3: 1.5rem;
+  --spacing-4: 2rem;
+  --spacing-5: 2.5rem;
+  --spacing-8: 4rem;
+  --spacing-13: 6.5rem;
+  --spacing-21: 10.5rem;
+  --font-family: "Zen Kaku Gothic New", "Hiragino Sans", sans-serif;
+  --futura-bold-font-family: "FuturaLTPro-Bold", "Hiragino Sans", sans-serif;
+  --futura-book-font-family: "FuturaLTPro-Book", "Hiragino Sans", sans-serif;
+}
