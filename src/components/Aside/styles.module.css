@@ -1,0 +1,35 @@
+.aside {
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-3);
+}
+.profile {
+  line-height: 0;
+}
+.image {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+}
+.snsList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-2);
+  padding: var(--spacing-3);
+  border-radius: var(--border-radius-default);
+  background-color: var(--scarpa-flow);
+  position: sticky;
+  top: var(--spacing-3);
+}
+a.snsLink {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-2);
+  line-height: 24px;
+  font-weight: bold;
+  color: var(--white);
+}
+.snsLink:hover {
+  text-decoration: underline;
+}

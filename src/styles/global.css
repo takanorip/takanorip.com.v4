@@ -33,11 +33,19 @@
   --border-radius-default: 8px;
 }
 
+html {
+  height: 100%;
+}
+
 body {
   color: var(--bunker);
   font-family: var(--font-family);
   margin: 0;
   box-sizing: border-box;
+  height: 100%;
+  display: grid;
+  grid-template-rows: 96px auto 48px;
+  line-height: 1.5;
 }
 
 h1, h2, h3, p, div, ul, li, figure {
@@ -45,7 +53,6 @@ h1, h2, h3, p, div, ul, li, figure {
 }
 
 a {
-  color: currentColor;
   text-decoration: none;
 }
 

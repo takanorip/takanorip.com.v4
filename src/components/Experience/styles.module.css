@@ -1,0 +1,57 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-5);
+  padding: var(--spacing-3);
+  border-radius: var(--border-radius-default);
+  border: 1px solid var(--alto);
+  position: relative;
+}
+
+.wrapper::before {
+  content: '';
+  display: block;
+  width: 2px;
+  background-color: var(--alto);
+  position: absolute;
+  top: 52px;
+  bottom: 52px;
+  left: 115px;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-3);
+  position: relative;
+}
+
+.period {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.hyphen {
+  transform: rotate(90deg);
+  line-height: 16px;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 6px;
+  background-color: var(--alto);
+}
+
+.company {
+  font-size: var(--font-size-large);
+  font-weight: bold;
+  color: var(--science-blue);
+}
+
+.role {
+  font-size: var(--font-size-small);
+  color: var(--scarpa-flow);
+}
