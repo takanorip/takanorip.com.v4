@@ -6,14 +6,14 @@ import Header from '../components/Header/index';
 import Main from '../components/Main/index';
 import Aside from '../components/Aside/index';
 import Footer from '../components/Footer/index';
-import PortfolioPreview from '../components/PortfolioPreview/index.jsx';
 
-// Data Fetching: List all Markdown posts in the repo.
-const works = Astro.fetchContent('./work/**/*.md');
-const featuredProject = works[0];
+const apiUrl = 'https://takanorip.microcms.io/api/v1/works'
+const baseHeaders = {
+  headers: { 'X-MICROCMS-API-KEY': 'd40081c2-4d7e-4e26-a730-330f9b7fb70e' },
+};
 
-// Full Astro Component Syntax:
-// https://docs.astro.build/core-concepts/astro-components/
+const response = await fetch(apiUrl, baseHeaders);
+const data = await response.json();
 ---
 
 <html lang="en">
@@ -24,14 +24,14 @@ const featuredProject = works[0];
         display: flex;
         justify-content: center;
         gap: var(--spacing-5);
-        padding: var(--spacing-8) var(--spacing-3) var(--spacing-13);
+        padding: 200px var(--spacing-3) var(--spacing-13);
       }
     </style>
   </head>
   <body>
     <Header dir="about" />
     <div class="about">
-      <Main />
+      <Main works={data.contents} />
       <Aside />
     </div>
     <Footer />

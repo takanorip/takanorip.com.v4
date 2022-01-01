@@ -44,7 +44,7 @@ body {
   box-sizing: border-box;
   height: 100%;
   display: grid;
-  grid-template-rows: 96px auto 48px;
+  grid-template-rows: auto 48px;
   line-height: 1.5;
 }
 
@@ -58,4 +58,8 @@ a {
 
 a:visited {
   color: currentColor;
+}
+
+a, p, ul, li, div {
+  box-sizing: border-box;
 }

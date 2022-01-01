@@ -1,10 +1,13 @@
+import type { FunctionalComponent } from 'preact';
 import { h } from 'preact';
 import Button from '../Button/index';
 import Experience from '../Experience/index';
 import Activity from '../Activity/index';
+import WorkItem from '../WorkItem/index';
+import ArrowRight from '../Svg/ArrowRight';
 import Styles from './styles.module.css';
 
-const Main = () => {
+const Main: FunctionalComponent = ({ works }) => {
   return (
     <main className={Styles.main}>
       <div>
@@ -22,7 +25,8 @@ const Main = () => {
       </section>
       <section className={Styles.section}>
         <h2 className={Styles.title}>Featured works</h2>
-        <div className={Styles.buttonWrapper}><Button to="/works">View all works</Button></div>
+        {works.map(item => <WorkItem item={item} />)}
+        <div className={Styles.buttonWrapper}><Button to="/works" icon={<ArrowRight />}>View all works</Button></div>
       </section>
       <div className={Styles.subGrid}>
         <section className={Styles.subSection}>

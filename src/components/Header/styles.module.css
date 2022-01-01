@@ -3,6 +3,11 @@
   justify-content: space-between;
   padding: var(--spacing-3) var(--spacing-5);
   border-bottom: 1px solid var(--alto);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: var(--white);
 }
 
 .logo {

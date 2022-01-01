@@ -8,9 +8,9 @@ const Experience = () => {
       {experiences.map(item => (
         <div className={Styles.item}>
           <div className={Styles.period}>
-            <p className={Styles.start}>{item.start}</p>
+            <p className={Styles.end}>{item.end || 'Now'}</p>
             <p className={Styles.hyphen}>-</p>
-            <p className={Styles.end}>{item.end}</p>
+            <p className={Styles.start}>{item.start}</p>
           </div>
           <div className={Styles.dot}></div>
           <div className={Styles.detail}>
