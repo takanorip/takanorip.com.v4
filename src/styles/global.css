@@ -1,18 +1,16 @@
 :root {
   --supernova: #FDC400;
+  --solitude: #E3F2FE;
   --picton-blue: #00C0FD;
   --azure-radiance: #007DFD;
   --science-blue: #0064CA;
-  --forest-green: #008D18;
-  --bunker: #001319;
-  --white: #FFFFFF;
-  --nevada: #63777D;
-  --limed-spruce: #415157;
-  --wild-sand: #F4F5F6;
-  --solitude: #E3F2FE;
-  --ottoman: #000000;
   --ottoman: #E6F4E8;
+  --forest-green: #008D18;
+  --white: #FFFFFF;
+  --wild-sand: #F4F5F6;
   --alto: #DDE0E4;
+  --scarpa-flow: #525960;
+  --bunker: #001319;
   --ease-out-expo: cubic-bezier(0.19, 1, 0.22, 1);
   --spacing-0: 0.25rem;
   --spacing-1: 0.5rem;
@@ -23,7 +21,23 @@
   --spacing-8: 4rem;
   --spacing-13: 6.5rem;
   --spacing-21: 10.5rem;
-  --font-family: "Zen Kaku Gothic New", "Hiragino Sans", sans-serif;
-  --futura-bold-font-family: "FuturaLTPro-Bold", "Hiragino Sans", sans-serif;
-  --futura-book-font-family: "FuturaLTPro-Book", "Hiragino Sans", sans-serif;
+  --font-family: "Nunito Sans", "Hiragino Sans", sans-serif;
+}
+
+body {
+  color: var(--bunker);
+  font-family: var(--font-family);
+  margin: 0;
+}
+
+h1, h2, h3, p, div, ul, li {
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:visited {
+  color: currentColor;
 }

@@ -1,65 +1,49 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding: var(--spacing-3) var(--spacing-5);
+  border-bottom: 1px solid var(--alto);
+}
+
+.logo {
+  display: flex;
+  gap: var(--spacing-2);
+  align-items: center;
+}
+
+.nameLogo {
+  height: 24px;
+}
+
+.treeLogo {
+  width: 48px;
+  height: 48px;
+}
+
 .nav {
-	display: flex;
-	align-items: center;
-	padding-top: 1rem;
-	padding-right: 2rem;
-	padding-bottom: 1rem;
-	padding-left: 2rem;
+  display: flex;
+  gap: var(--spacing-1);
 }
 
-.logolink {
-	display: block;
-	color: var(--t-fg);
-	text-decoration: none;
+.navItem {
+  line-height: 48px;
+  padding: 0 var(--spacing-2);
+  border-radius: 8px;
+  letter-spacing: 0.8px;
 }
 
-.link {
-	color: var(--t-subdue);
-	display: block;
-	margin-left: 1rem;
-	text-decoration: none;
-	font-size: var(--f-d1);
-	text-transform: uppercase;
-	padding-top: 0.75em;
-	padding-bottom: 0.75em;
-
-	&:focus,
-	&:hover {
-		color: var(--t-active);
-	}
+.navItem.active {
+  color: var(--white);
+  background-color: var(--science-blue);
+  pointer-events: none;
 }
 
-.monogram {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	width: 2em;
-	height: 2em;
-	margin-right: 0.5rem;
-	color: var(--c-black);
-	font-weight: 900;
-	letter-spacing: -0.125rem;
-	border: 3px solid currentColor;
-	border-radius: 50%;
+.navItem:hover {
+  background-color: var(--solitude);
 }
 
-.social {
-	display: block;
-	margin-left: auto;
-
-	+ .social {
-		margin-left: 0.75rem;
-	}
-}
-
-.socialicon {
-	display: block;
-	width: 1.25rem;
-	height: 1.25rem;
-	fill: var(--t-subdue);
-	transition: fill linear 150ms;
-
-	&:hover {
-		fill: var(--t-active);
-	}
+.navItemBlog {
+  display: flex;
+  gap: var(--spacing-1);
+  align-items: center;
 }

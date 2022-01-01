@@ -1,5 +1,5 @@
 ---
-const { title = 'Jeanine White: Personal Site', description = 'The personal site of Jeanine White' } = Astro.props;
+const { title = 'takanoip portfolio', description = 'The Portfolio of takanrip, a Design Engeneer' } = Astro.props;
 ---
 
 <meta charset="UTF-8" />
@@ -9,5 +9,15 @@ const { title = 'Jeanine White: Personal Site', description = 'The personal site
 
 <link rel="icon" type="image/x-icon" href="/favicon.ico" />
 <link rel="stylesheet" type="text/css" href={Astro.resolve('../styles/global.css')} />
-<link rel="preconnect" href="https://fonts.gstatic.com" />
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;400;700;900&display=swap" rel="stylesheet" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;700;900&display=swap" rel="stylesheet">
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-VJ95WWW3Q4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-VJ95WWW3Q4');
+</script>
