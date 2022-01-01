@@ -14,6 +14,7 @@
   --ease-out-expo: cubic-bezier(0.19, 1, 0.22, 1);
   --spacing-0: 0.25rem;
   --spacing-1: 0.5rem;
+  --spacing-05: 0.75rem;
   --spacing-2: 1rem;
   --spacing-3: 1.5rem;
   --spacing-4: 2rem;
@@ -29,19 +30,22 @@
   --font-size-h3: 36px;
   --font-size-h2: 54px;
   --font-size-h1: 81px;
+  --border-radius-default: 8px;
 }
 
 body {
   color: var(--bunker);
   font-family: var(--font-family);
   margin: 0;
+  box-sizing: border-box;
 }
 
-h1, h2, h3, p, div, ul, li {
+h1, h2, h3, p, div, ul, li, figure {
   margin: 0;
 }
 
 a {
+  color: currentColor;
   text-decoration: none;
 }
 

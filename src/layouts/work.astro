@@ -1,6 +1,6 @@
 ---
 import MainHead from '../components/MainHead.astro';
-import Button from '../components/Button/index.jsx';
+import Button from '../components/Button/index';
 import Footer from '../components/Footer/index';
 import Header from '../components/Header/index';
 
@@ -15,7 +15,7 @@ const { content } = Astro.props;
     </style>
   </head>
   <body>
-    <Header />
+    <Header dir="works" />
     <header style={`background-image:url(${content.img})`} class="hero">
       <h1 class="title">{content.title}</h1>
     </header>
@@ -30,7 +30,7 @@ const { content } = Astro.props;
     </div>
     <footer class="tac mt6">
       <a href="/projects">
-        <Button>View More</Button>
+        <Button to="">View More</Button>
       </a>
     </footer>
     <Footer />

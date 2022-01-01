@@ -1,14 +1,14 @@
 ---
 // Component Imports
 import MainHead from '../components/MainHead.astro';
-import Button from '../components/Button/index.jsx';
+import Button from '../components/Button/index';
 import Header from '../components/Header/index';
 import Footer from '../components/Footer/index';
 import PortfolioPreview from '../components/PortfolioPreview/index.jsx';
 
 // Data Fetching: List all Markdown posts in the repo.
-const projects = Astro.fetchContent('./project/**/*.md');
-const featuredProject = projects[0];
+const works = Astro.fetchContent('./work/**/*.md');
+const featuredProject = works[0];
 
 // Full Astro Component Syntax:
 // https://docs.astro.build/core-concepts/astro-components/
@@ -17,221 +17,190 @@ const featuredProject = projects[0];
 <html lang="en">
   <head>
     <MainHead title="Jeanine White: Personal Site" description="Jeanine White: Developer, Speaker, and Writer..." />
-    <style lang="scss">
-      $w-s: 750px;
-
-      .hero {
-        position: relative;
-        overflow: hidden;
-
-        @media (min-width: $w-s) {
-          height: 45vw;
-        }
-      }
-
-      .img {
-        display: block;
+    <style lang="css">
+      .about {
         width: 100%;
-        height: auto;
+        display: flex;
+        justify-content: center;
+        gap: var(--spacing-5);
+        padding: var(--spacing-8) var(--spacing-3) var(--spacing-13);
       }
-
-      .gradient,
-      .gradient2 {
-        background-image: url('/assets/mesh-gradient.jpg');
-        background-size: cover;
-        pointer-events: none;
-        mix-blend-mode: screen;
-        width: 100%;
-        height: 100%;
-        position: absolute;
-        top: 0;
-        left: 0;
-        z-index: 2;
-      }
-
-      .gradient2 {
-        mix-blend-mode: multiply;
-        background-size: cover;
-      }
-
-      .overlay {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        z-index: 10;
+      .main {
         display: flex;
         flex-direction: column;
-        align-items: flex-start;
-        justify-content: center;
-        padding-left: 2rem;
-
-        @media (min-width: $w-s) {
-          padding-left: 4rem;
-        }
+        gap: var(--spacing-8);
       }
-
+      .section {
+        width: 720px;
+      }
+      .keyText {
+        font-size: var(--font-size-h1);
+        font-weight: 900;
+        line-height: 1.2;
+        letter-spacing: 0.4px;
+      }
+      .subText {
+        margin-top: var(--spacing-2);
+        color: var(--scarpa-flow);
+        font-size: var(--font-size-large);
+      }
       .title {
-        font-weight: 900;
-        font-size: var(--f-u8);
-        margin-bottom: 0.5rem;
-        margin-top: 0;
-
-        @media (min-width: $w-s) {
-          font-size: var(--f-u12);
-        }
-      }
-
-      .grid {
-        display: grid;
-        grid-gap: 2rem;
-
-        @media (min-width: 1200px) {
-          grid-template-columns: 2fr 1fr;
-        }
-      }
-
-      .sectionTitle {
-        font-weight: 700;
-        font-size: var(--f-u8);
-        margin-top: 4rem;
-        margin-bottom: 2rem;
-      }
-
-      .role {
-        position: relative;
-        display: inline-block;
-        font-weight: 900;
-        color: var(--t-bg);
-        background-color: var(--t-fg);
-        padding: 0.25em 0.5em;
-        z-index: 2;
-
-        @media (min-width: $w-s) {
-          font-size: var(--f-u3);
-        }
-
-        + .role {
-          margin-left: 1em;
-        }
-
-        &:nth-of-type(1) {
-          .invert {
-            background-color: var(--c-pink);
-          }
-        }
-
-        &:nth-of-type(2) {
-          .invert {
-            background-color: var(--c-blue);
-          }
-        }
-
-        &:nth-of-type(3) {
-          .invert {
-            background-color: var(--c-green);
-          }
-        }
-
-        &:hover {
-          .invert {
-            clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
-          }
-        }
-      }
-
-      .invert {
-        position: absolute;
-        color: var(--t-fg);
         display: flex;
         align-items: center;
-        justify-content: center;
-        width: 100%;
-        height: 100%;
-        top: 0;
-        left: 0;
-        pointer-events: none;
-        clip-path: polygon(0% 100%, 100% 100%, 100% 200%, 0% 200%);
-        transition: clip-path cubic-bezier(0.4, 0, 0.5, 1) 150ms;
+        gap: var(--spacing-1);
+        font-size: var(--font-size-h3);
+        font-weight: 900;
+        letter-spacing: 0.8px;
+        margin-bottom: var(--spacing-3);
       }
-
-      .desc {
-        font-size: var(--f-u2);
-        margin-top: 1.5rem;
-        margin-bottom: 0;
-      }
-
-      .subtitle {
+      .title::before {
         display: block;
-        font-weight: 400;
-        font-size: var(--f-d6);
-        letter-spacing: -0.0625em;
+        content: '';
+        width: 20px;
+        height: 12px;
+        border-radius: 6px;
+        background-color: var(--supernova);
       }
-
-      .bio {
-        line-height: 2;
-        margin-bottom: 2rem;
-
-        > span:first-of-type {
-          line-height: 1;
-          margin-bottom: 0.5em;
-          display: block;
-          font-weight: 700;
-          font-size: var(--f-u4);
-        }
+      .text {
+        display: flex;
+        flex-direction: column;
+        gap: var(--spacing-2);
+      }
+      .blue {
+        color: var(--science-blue);
+      }
+      .buttonWrapper {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: var(--spacing-2);
+      }
+      .subGrid {
+        display: grid;
+        grid-template-columns: 1fr 320px;
+        gap: var(--spacing-5);
+      }
+      .aside {
+        width: 200px;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: var(--spacing-3);
+        position: sticky;
+        top: var(--spacing-2);
+      }
+      .profile {
+        line-height: 0;
+      }
+      .image {
+        width: 200px;
+        height: 200px;
+        object-fit: cover;
+      }
+      .sns-list {
+        display: flex;
+        flex-direction: column;
+        gap: var(--spacing-2);
+        padding: var(--spacing-3);
+        border-radius: var(--border-radius-default);
+        background-color: var(--scarpa-flow);
+      }
+      .sns-link {
+        display: flex;
+        align-items: center;
+        gap: var(--spacing-2);
+        line-height: 24px;
+        font-weight: bold;
+        color: var(--white);
+      }
+      .sns-link:hover {
+        text-decoration: underline;
       }
     </style>
   </head>
   <body>
     <Header dir="about" />
-    <header class="hero">
-      <img
-        width="1600"
-        height="1131"
-        class="img"
-        src="https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=1200&q=75"
-        srcSet="https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=1200&q=75 800w,https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=1200&q=75 1200w,https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=1600&q=75 1600w,https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=2400&q=75 2400w"
-        sizes="(max-width: 800px) 800px, (max-width: 1200px) 1200px, (max-width: 1600px) 1600px, (max-width: 2400px) 2400px, 1200px"
-      />
-      <div class="gradient"></div>
-      <div class="gradient2"></div>
-      <div class="overlay">
-        <h1 class="title">
-          <small class="subtitle">The personal site of </small>Jeanine White
-        </h1>
+    <div class="about">
+      <main class="main">
         <div>
-          <span class="role">👩‍💻 Developer <span class="invert">👩‍💻 Developer</span></span>&nbsp;
-          <span class="role">🎤 Speaker <span class="invert">🎤 Speaker</span></span>&nbsp;
-          <span class="role">✏️ Writer <span class="invert">✏️ Writer</span></span>
+          <p class="keyText">I'm <span class="blue">takanorip</span>.<br>Design Engineer.</p>
+          <p class="subText">I'm interested in systemizing the design and implementation of UI.</p>
         </div>
-        <p class="desc">Lover of dogs, roadtrips, and poetry.</p>
-      </div>
-    </header>
-    <main class="wrapper mt4 mb4">
-      <div class="grid">
-        <div class="section">
-          <h3 class="sectionTitle">Selected Work</h3>
-          <PortfolioPreview project={featuredProject} />
-          <div class="tac mt4">
-            <a href="/projects">
-              <Button>View All</Button>
-            </a>
+        <section class="section">
+          <h2 class="title">About me</h2>
+          <div class="text">
+            <p><span class="blue">takanorip / 大木尊紀 / Takanori Oki</span>です。日本在住のUIデザイナー/フロントエンドエンジニアです。WebとUIが好きで、デザインと開発の両面からUIに関わっています。</p>
+            <p>現在は ClassDo のUIデザイナーとしてビデオチャットアプリのUIデザインやデザインガイドラインの構築などを行ったり、副業フロントエンドエンジニアとしてReactのアプリケーション開発をしたりしています。</p>
+            <p>UIやWebフロントエンド全般に興味があります。特にウェブフォント、Web Components、 Figmaが好きで、様々なツールを開発したり記事を書いたりしています。最近はデザインと実装をつなぐシステムにも興味があり、デザインシステムの構築や実装にも取り組んでいます。</p>
+            <p>イベントやカンファレンスへの登壇や本の執筆なども積極的に行っています。登壇や執筆、副業などお気軽にご相談ください。</p>
           </div>
+        </section>
+        <section class="section works">
+          <h2 class="title">Featured works</h2>
+          <div class="buttonWrapper"><Button to="/works">View all works</Button></div>
+        </section>
+        <div class="subGrid">
+          <section class="subSection">
+            <h2 class="title">Activity</h2>
+          </section>
+          <section class="subSection">
+            <h2 class="title">Experience</h2>
+          </section>
         </div>
-        <div class="section">
-          <h3 class="sectionTitle">About me</h3>
-          <p class="bio">
-            <span>Hello!</span> I’m Jeanine, and this is my website. It was made using{' '}
-            <a href="https://github.com/withastro/astro" target="_blank" rel="nofollow"> Astro </a>, a new way to build static sites. This is just an example template for you to
-            modify.
-          </p>
-          <p>
-            <a href="/about">Read more</a>
-          </p>
+      </main>
+      <aside class="aside">
+        <figure class="profile"><img class="image" src="/assets/profile.png" alt="takanorip profile image"></figure>
+        <div class="sns-list">
+          <a class="sns-link" href="">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M21.4791 7.14123C21.4936 7.35123 21.4936 7.56123 21.4936 7.77316C21.4936 14.2309 16.5774 21.6786 7.58809 21.6786V21.6748C4.93261 21.6786 2.33229 20.918 0.0968018 19.4838C0.482931 19.5303 0.870995 19.5535 1.26003 19.5544C3.46067 19.5564 5.59841 18.818 7.32971 17.4583C5.23841 17.4186 3.40454 16.0551 2.7639 14.0645C3.49648 14.2057 4.25132 14.1767 4.97035 13.9803C2.69035 13.5196 1.05003 11.5164 1.05003 9.18994C1.05003 9.16865 1.05003 9.14832 1.05003 9.128C1.72938 9.50639 2.49003 9.71639 3.26809 9.73961C1.12067 8.30445 0.458737 5.44768 1.75551 3.21413C4.2368 6.26736 7.89777 8.12348 11.8278 8.31994C11.4339 6.62252 11.972 4.84381 13.2416 3.65058C15.21 1.80026 18.3058 1.8951 20.1562 3.86252C21.2507 3.64671 22.2997 3.2451 23.2597 2.67607C22.8949 3.80736 22.1313 4.76832 21.1113 5.37897C22.08 5.26478 23.0265 5.00542 23.9178 4.60961C23.2616 5.59284 22.4352 6.44929 21.4791 7.14123Z" fill="white"/>
+            </svg>
+            Twitter
+          </a>
+          <a class="sns-link" href="">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M11.9989 0.296553C5.37254 0.296553 0 5.66893 0 12.2965C0 17.5982 3.43804 22.0954 8.20651 23.6829C8.8069 23.7927 9.02569 23.4221 9.02569 23.1039C9.02569 22.8196 9.01538 22.0645 9.00948 21.0634C5.67163 21.7883 4.96737 19.4546 4.96737 19.4546C4.4215 18.0689 3.63473 17.6999 3.63473 17.6999C2.5452 16.9551 3.71724 16.9698 3.71724 16.9698C4.9217 17.0553 5.55523 18.2067 5.55523 18.2067C6.62562 20.0402 8.36416 19.5105 9.04779 19.2041C9.15682 18.4284 9.46622 17.8995 9.80951 17.5997C7.14497 17.2969 4.34341 16.2671 4.34341 11.6689C4.34341 10.3592 4.8112 9.28808 5.57881 8.44904C5.45505 8.14554 5.04325 6.92565 5.69594 5.27335C5.69594 5.27335 6.7037 4.9507 8.99622 6.50355C9.95316 6.23762 10.9801 6.10428 12.0004 6.09986C13.0192 6.10428 14.0461 6.23762 15.0045 6.50355C17.2956 4.9507 18.3011 5.27335 18.3011 5.27335C18.956 6.92565 18.5442 8.14554 18.4205 8.44904C19.1895 9.28808 19.6544 10.3592 19.6544 11.6689C19.6544 16.2789 16.8484 17.2932 14.175 17.5901C14.606 17.9606 14.9898 18.6929 14.9898 19.8126C14.9898 21.4163 14.975 22.7105 14.975 23.1039C14.975 23.4251 15.1909 23.7986 15.8001 23.6814C20.5649 22.091 24 17.5967 24 12.2965C24 5.66893 18.6267 0.296553 11.9989 0.296553Z" fill="white"/>
+            </svg>
+            GitHub
+          </a>
+          <a class="sns-link" href="">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M1.06002 22.641H5.68063C5.92525 22.641 6.14269 22.5051 6.27859 22.3148L18.9989 1.41336C19.1619 1.14156 18.9717 0.815399 18.6455 0.815399H14.2695C14.0521 0.815399 13.8618 0.924119 13.7531 1.11438L0.842577 22.2605C0.761037 22.4236 0.869757 22.641 1.06002 22.641Z" fill="white"/>
+              <path d="M16.9876 22.3148L22.9944 12.6659C23.1846 12.3669 22.9672 11.9864 22.6138 11.9864H18.265C18.1019 11.9864 17.9389 12.0679 17.8573 12.2038L11.6875 22.0702C11.5244 22.3148 11.7146 22.641 12.0136 22.641H16.444C16.6614 22.641 16.8788 22.5323 16.9876 22.3148Z" fill="white"/>
+            </svg>
+            Zenn
+          </a>
+          <a class="sns-link" href="">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M21.155 9.26152C22.7255 9.26152 23.9986 7.98843 23.9986 6.41799C23.9986 4.84756 22.7255 3.57447 21.155 3.57447C19.5846 3.57447 18.3115 4.84756 18.3115 6.41799C18.3115 7.98843 19.5846 9.26152 21.155 9.26152Z" fill="white"/>
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M9.6416 14.5751C9.4709 14.4642 8.98506 13.8128 7.64135 10.6038C7.55746 10.4024 7.47941 10.2288 7.40573 10.08L7.13072 9.41764L4.77594 3.73132H0.0649414L2.42044 9.41764L4.77594 15.1076L6.95126 20.3599C6.96619 20.3954 6.99125 20.4256 7.0233 20.4469C7.05535 20.4682 7.09297 20.4795 7.13144 20.4795C7.16992 20.4795 7.20754 20.4682 7.23959 20.4469C7.27164 20.4256 7.2967 20.3954 7.31163 20.3599L9.6788 14.6933C9.68721 14.6723 9.6881 14.6491 9.68131 14.6275C9.67453 14.606 9.6605 14.5875 9.6416 14.5751Z" fill="white"/>
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M18.4669 14.5751C18.2962 14.4642 17.8104 13.8128 16.4667 10.6038C16.3828 10.4024 16.304 10.2288 16.2303 10.0793L15.9568 9.41764L13.6013 3.73132H8.89026L11.2458 9.41764L13.6013 15.1076L15.7766 20.3599C15.7915 20.3954 15.8166 20.4256 15.8486 20.4469C15.8807 20.4682 15.9183 20.4795 15.9568 20.4795C15.9952 20.4795 16.0329 20.4682 16.0649 20.4469C16.097 20.4256 16.122 20.3954 16.1369 20.3599L18.5041 14.694C18.5124 14.6729 18.5133 14.6496 18.5065 14.628C18.4997 14.6063 18.4858 14.5877 18.4669 14.5751Z" fill="white"/>
+            </svg>
+            Wantedly
+          </a>
+          <a class="sns-link" href="">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M12 0C5.37528 0 0 5.37528 0 12C0 18.6247 5.37528 24 12 24C18.6117 24 24 18.6247 24 12C24 5.37528 18.6117 0 12 0ZM19.9262 5.53145C21.3579 7.27548 22.2169 9.5011 22.243 11.9089C21.9046 11.8438 18.5206 11.154 15.1106 11.5835C15.0325 11.4143 14.9675 11.2321 14.8894 11.0499C14.6811 10.5553 14.4468 10.0477 14.2126 9.56616C17.987 8.03038 19.705 5.81779 19.9262 5.53145ZM12 1.77006C14.603 1.77006 16.9848 2.7462 18.7939 4.34707C18.6117 4.60738 17.0629 6.6768 13.4187 8.04338C11.7397 4.95878 9.87852 2.43384 9.5922 2.04338C10.3601 1.86117 11.167 1.77006 12 1.77006ZM7.63992 2.73319C7.91323 3.09761 9.73536 5.63558 11.4403 8.6551C6.65076 9.93058 2.42083 9.90456 1.96529 9.90456C2.62906 6.72886 4.77658 4.08677 7.63992 2.73319ZM1.74403 12.013C1.74403 11.9089 1.74403 11.8048 1.74403 11.7006C2.18655 11.7137 7.15836 11.7787 12.2733 10.243C12.5727 10.8156 12.846 11.4013 13.1063 11.987C12.9761 12.026 12.833 12.0651 12.7028 12.1041C7.41866 13.8091 4.60738 18.4686 4.37311 18.859C2.7462 17.0499 1.74403 14.6421 1.74403 12.013ZM12 22.256C9.63125 22.256 7.44468 21.449 5.71366 20.0954C5.89589 19.718 7.97832 15.7093 13.757 13.692C13.7831 13.679 13.7961 13.679 13.8221 13.6659C15.2668 17.4013 15.8525 20.538 16.0087 21.436C14.7722 21.9696 13.4187 22.256 12 22.256ZM17.7137 20.4989C17.6095 19.8742 17.0629 16.8807 15.7224 13.1974C18.9371 12.6898 21.7484 13.5228 22.0998 13.6399C21.6573 16.4902 20.0173 18.9501 17.7137 20.4989Z" fill="white"/>
+          </svg>
+            Dribbble
+          </a>
+          <a class="sns-link" href="">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <g clip-path="url(#clip0_631_1182)">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M10.0249 13.875H4.6875C2.09867 13.875 0 11.7763 0 9.1875C0 6.59867 2.09867 4.5 4.6875 4.5H10.9145C11.95 4.5 12.7895 5.33947 12.7895 6.375C12.7895 7.41053 11.95 8.25 10.9145 8.25H4.59164C4.07387 8.25 3.65414 8.66973 3.65414 9.1875C3.65414 9.70527 4.07387 10.125 4.59164 10.125H9.92904C12.5179 10.125 14.6165 12.2237 14.6165 14.8125C14.6165 17.4013 12.5179 19.5 9.92904 19.5H1.875C0.839466 19.5 0 18.6605 0 17.625C0 16.5895 0.839466 15.75 1.875 15.75H10.0249C10.5427 15.75 10.9624 15.3303 10.9624 14.8125C10.9624 14.2947 10.5427 13.875 10.0249 13.875ZM13.97 19.5C15.2168 18.6568 16.108 17.3126 16.3657 15.75H19.3916C19.9006 15.75 20.3133 15.3303 20.3133 14.8125V9.1875C20.3133 8.66973 19.9006 8.25 19.3916 8.25H13.8947C14.3326 7.75242 14.5988 7.09533 14.5988 6.375C14.5988 5.65467 14.3326 4.99758 13.8947 4.5H20.3133C22.3494 4.5 24 6.17893 24 8.25V15.75C24 17.8211 22.3494 19.5 20.3133 19.5H13.97Z" fill="white"/>
+              </g>
+              <defs>
+                <clipPath id="clip0_631_1182">
+                  <rect width="24" height="15" fill="white" transform="translate(0 4.5)"/>
+                </clipPath>
+              </defs>
+            </svg>
+            Speaker Deck
+          </a>
         </div>
-      </div>
-    </main>
+      </aside>
+    </div>
     <Footer />
   </body>
 </html>
