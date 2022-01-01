@@ -31,6 +31,7 @@
   --font-size-h2: 54px;
   --font-size-h1: 81px;
   --border-radius-default: 8px;
+  --border-radius-small: 2px;
 }
 
 html {

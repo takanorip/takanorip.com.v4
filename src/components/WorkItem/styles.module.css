@@ -27,10 +27,27 @@
   margin-bottom: var(--spacing-1);
   position: relative;
   z-index: 1;
-  letter-spacing: 0.8px;
+  letter-spacing: 0.4px;
+}
+
+.category {
+  display: flex;
+  gap: var(--spacing-1);
+  margin-bottom: var(--spacing-0);
+  z-index: 1;
+}
+
+.tag {
+  padding: 0 var(--spacing-0);
+  font-size: var(--font-size-minimum);
+  border-radius: var(--border-radius-small);
+  background-color: var(--white);
+  color: var(--scarpa-flow);
+  letter-spacing: 0.4px;
 }
 
 .date {
   font-size: var(--font-size-minimum);
   z-index: 1;
+  letter-spacing: 0.4px;
 }

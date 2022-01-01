@@ -13,7 +13,12 @@ const WorkItem: FunctionalComponent = ({ item }) => {
       }}
     >
       <p className={Styles.title}>{item.title}</p>
-      <p className={Styles.date}>{format(new Date(item.publishDate), 'yyyy/MM/dd')}</p>
+      <div className={Styles.category}>
+        {item.category.map(c => (
+          <p className={Styles.tag}>{c}</p>
+        ))}
+      </div>
+      <p className={Styles.date}>{format(new Date(item.publishDate), 'yyyy.MM.dd')}</p>
     </a>
   );
 }
