@@ -22,6 +22,13 @@
   --spacing-13: 6.5rem;
   --spacing-21: 10.5rem;
   --font-family: "Nunito Sans", "Hiragino Sans", sans-serif;
+  --font-size-minimum: 12px;
+  --font-size-small: 14px;
+  --font-size-default: 16px;
+  --font-size-large: 24px;
+  --font-size-h3: 36px;
+  --font-size-h2: 54px;
+  --font-size-h1: 81px;
 }
 
 body {
