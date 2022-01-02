@@ -11,13 +11,13 @@ export const activities = [
     link: 'https://anchor.fm/ogenkidesuka-fm/'
   },
   {
-    title: 'お元気ですか.fm',
-    category: 'podcast',
-    link: 'https://anchor.fm/ogenkidesuka-fm/'
+    title: 'もくもく寺',
+    category: 'community',
+    link: 'https://frontend-temple.connpass.com/'
   },
   {
-    title: 'お元気ですか.fm',
-    category: 'podcast',
-    link: 'https://anchor.fm/ogenkidesuka-fm/'
+    title: 'Web Platform Study Group',
+    category: 'community',
+    link: 'https://www.youtube.com/channel/UCfToJ-sTOqvBnnuVq3zdZhA'
   }
 ]

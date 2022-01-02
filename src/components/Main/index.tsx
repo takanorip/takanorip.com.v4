@@ -8,6 +8,8 @@ import ArrowRight from '../Svg/ArrowRight';
 import Styles from './styles.module.css';
 
 const Main: FunctionalComponent = ({ works }) => {
+  const featuredWorks = works.filter(item => item.isFeatured);
+
   return (
     <main className={Styles.main}>
       <div>
@@ -25,8 +27,12 @@ const Main: FunctionalComponent = ({ works }) => {
       </section>
       <section className={Styles.section}>
         <h2 className={Styles.title}>Featured works</h2>
-        {works.map(item => <WorkItem item={item} />)}
-        <div className={Styles.buttonWrapper}><Button to="/works" icon={<ArrowRight />}>View all works</Button></div>
+        <div className={Styles.works}>
+          {featuredWorks.map(item => <WorkItem className={Styles.workItem} item={item} />)}
+        </div>
+        <div className={Styles.buttonWrapper}>
+          <Button to="/works" icon={<ArrowRight />}>View all works</Button>
+        </div>
       </section>
       <div className={Styles.subGrid}>
         <section className={Styles.subSection}>

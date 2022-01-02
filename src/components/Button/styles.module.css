@@ -4,6 +4,7 @@ a.button {
   gap: var(--spacing-05);
   width: fit-content;
   padding: 0 var(--spacing-2);
+  height: 48px;
   line-height: 48px;
   color: var(--white);
   background-color: var(--science-blue);

@@ -4,7 +4,7 @@
   gap: var(--spacing-13);
 }
 .section {
-  width: 720px;
+  max-width: 720px;
 }
 .keyText {
   font-size: var(--font-size-h1);
@@ -42,6 +42,11 @@
 }
 .blue {
   color: var(--science-blue);
+}
+.works {
+  display: grid;
+  gap: var(--spacing-2);
+  grid-template-columns: 1fr 1fr 1fr;
 }
 .buttonWrapper {
   width: 100%;

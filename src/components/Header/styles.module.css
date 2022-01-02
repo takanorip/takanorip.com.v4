@@ -8,6 +8,7 @@
   left: 0;
   right: 0;
   background-color: var(--white);
+  z-index: 2;
 }
 
 .logo {
@@ -35,6 +36,7 @@
   padding: 0 var(--spacing-2);
   border-radius: var(--border-radius-default);
   letter-spacing: 0.8px;
+  transition: background-color 0.3s var(--ease-out-cubic);
 }
 
 .navItem.active {

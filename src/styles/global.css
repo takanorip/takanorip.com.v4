@@ -12,6 +12,7 @@
   --scarpa-flow: #525960;
   --bunker: #001319;
   --ease-out-expo: cubic-bezier(0.19, 1, 0.22, 1);
+  --ease-out-cubic: cubic-bezier(0.33, 1, 0.68, 1);
   --spacing-0: 0.25rem;
   --spacing-1: 0.5rem;
   --spacing-05: 0.75rem;
@@ -26,12 +27,13 @@
   --font-size-minimum: 12px;
   --font-size-small: 14px;
   --font-size-default: 16px;
+  --font-size-bold: 18px;
   --font-size-large: 24px;
   --font-size-h3: 36px;
   --font-size-h2: 54px;
   --font-size-h1: 81px;
   --border-radius-default: 8px;
-  --border-radius-small: 2px;
+  --border-radius-small: 4px;
 }
 
 html {
@@ -49,8 +51,9 @@ body {
   line-height: 1.5;
 }
 
-h1, h2, h3, p, div, ul, li, figure {
+h1, h2, h3, p, a, div, ul, li, figure, dl, dd, button {
   margin: 0;
+  box-sizing: border-box;
 }
 
 a {
@@ -61,6 +64,7 @@ a:visited {
   color: currentColor;
 }
 
-a, p, ul, li, div {
-  box-sizing: border-box;
+button {
+  font-family: var(--font-family);
+  appearance: none;
 }

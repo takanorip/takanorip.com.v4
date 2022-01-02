@@ -1,8 +1,8 @@
 ---
-import MainHead from '../components/MainHead.astro';
-import Footer from '../components/Footer/index';
-import Header from '../components/Header/index';
-import WorkItem from '../components/WorkItem/index';
+import MainHead from '../../components/MainHead.astro';
+import Footer from '../../components/Footer/index';
+import Header from '../../components/Header/index';
+import Works from '../../components/Works/index';
 
 interface MarkdownFrontmatter {
   publishDate: number;
@@ -20,21 +20,10 @@ const data = await response.json();
 <html lang="en">
   <head>
     <MainHead title="All Projects | Jeanine White" description="Learn about Jenine White's most recent projects" />
-    <style lang="scss">
-      .grid {
-        display: grid;
-        grid-gap: 3rem;
-      }
-    </style>
   </head>
   <body>
-    <Header />
-    <div class="wrapper">
-      <h1 class="title mt4 mb4">All Projects</h1>
-      <div class="grid">
-        {data.contents.map(item => <WorkItem item={item} />)}
-      </div>
-    </div>
+    <Header dir='works' />
+    <Works works={data.contents} client:visible />
     <Footer />
   </body>
 </html>
