@@ -42,7 +42,8 @@
   padding-top: calc(3 / 4 * 100%);
   position: relative;
   border-radius: var(--border-radius-default);
-  border: 1px solid var(--alto);
+  background-color: var(--wild-sand);
+  /* border: 1px solid var(--alto); */
 }
 
 .image {
