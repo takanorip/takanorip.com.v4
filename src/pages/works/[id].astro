@@ -5,7 +5,7 @@ import Header from '../../components/Header/index';
 import Work from '../../components/Work/index';
 
 export const getStaticPaths = async () => {
-  const apiUrl = `https://takanorip.microcms.io/api/v1/works`
+  const apiUrl = `https://takanorip.microcms.io/api/v1/works?limit=1000`
   const baseHeaders = {
     headers: { 'X-MICROCMS-API-KEY': 'd40081c2-4d7e-4e26-a730-330f9b7fb70e' },
   };

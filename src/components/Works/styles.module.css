@@ -1,9 +1,9 @@
 .works {
   width: 100%;
   max-width: 1440px;
+  min-height: calc(100% - 48px);
   margin: 0 auto;
   padding: calc(96px + 40px) var(--spacing-5) var(--spacing-13);
-  overflow: auto;
 }
 .grid {
   display: grid;
@@ -50,6 +50,7 @@
 @media screen and (max-width: 767px) {
   .works {
     padding: calc(48px + 40px) var(--spacing-2) var(--spacing-8);
+    overflow: auto;
   }
   .grid {
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
