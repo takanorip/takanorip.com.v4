@@ -39,7 +39,6 @@
 
 .title {
   margin-top: auto;
-  font-size: var(--font-size-bold);
   font-weight: bold;
   margin-bottom: var(--spacing-1);
   position: relative;

@@ -26,13 +26,29 @@ const data = await response.json();
         gap: var(--spacing-5);
         padding: 200px var(--spacing-3) var(--spacing-13);
       }
+      @media screen and (max-width: 1007px) {
+        .about {
+          padding: 200px var(--spacing-2) var(--spacing-8);
+        }
+        .aside {
+          display: none;
+        }
+      }
+      @media screen and (max-width: 767px) {
+        .about {
+          padding: 88px var(--spacing-2) var(--spacing-8);
+        }
+      }
+
     </style>
   </head>
   <body>
     <Header dir="about" />
     <div class="about">
       <Main works={data.contents} />
-      <Aside />
+      <div class="aside">
+        <Aside />
+      </div>
     </div>
     <Footer />
   </body>

@@ -3,13 +3,13 @@
   display: flex;
   flex-direction: column;
   gap: var(--spacing-8);
-  margin: auto;
+  margin: 0 auto;
   padding: calc(96px + 64px) var(--spacing-5) var(--spacing-21);
 }
 
 .title {
   font-size: var(--font-size-h2);
-  font-weight: 900;
+  font-weight: 700;
   line-height: 1.2;
   color: var(--science-blue);
   margin-bottom: var(--spacing-5);
@@ -37,11 +37,12 @@
 }
 
 .figure {
-  width: 720px;
+  width: 100%;
+  max-width: 720px;
   padding-top: calc(3 / 4 * 100%);
   position: relative;
   border-radius: var(--border-radius-default);
-  background-color: var(--alto);
+  border: 1px solid var(--alto);
 }
 
 .image {
@@ -58,9 +59,37 @@
 
 .description {
   letter-spacing: 0.4px;
-  line-height: 1.6;
+  line-height: 1.8;
 }
 
 .description a {
   color: var(--science-blue);
+  overflow-wrap: anywhere;
+}
+
+@media screen and (max-width: 767px) {
+  .wrapper {
+    padding: calc(48px + 40px) var(--spacing-2) var(--spacing-8);
+    gap: var(--spacing-5);
+  }
+  .button {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 0 var(--spacing-2) var(--spacing-2) var(--spacing-2);
+    background-color: var(--white);
+  }
+  a.detailButton {
+    width: 100%;
+    justify-content: center;
+  }
+  .title {
+    font-size: var(--font-size-h3);
+    margin-bottom: var(--spacing-3);
+  }
+  .infoWrapper {
+    flex-direction: column;
+    gap: var(--spacing-3);
+  }
 }

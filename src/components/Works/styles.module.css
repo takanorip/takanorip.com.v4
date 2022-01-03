@@ -3,15 +3,22 @@
   max-width: 1440px;
   margin: 0 auto;
   padding: calc(96px + 40px) var(--spacing-5) var(--spacing-13);
+  overflow: auto;
 }
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 400px));
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   gap: var(--spacing-2);
+}
+.tabOverflow {
+  overflow-x: scroll;
+  overflow-y: hidden;
+  margin-bottom: var(--spacing-5);
 }
 .tabWrapper {
   display: flex;
-  margin-bottom: var(--spacing-5);
+  width: fit-content;
+  margin: auto;
 }
 .tab {
   border: 1px solid var(--alto);
@@ -38,4 +45,10 @@
   background-color: var(--science-blue);
   font-weight: bold;
   border: none;
+}
+
+@media screen and (max-width: 767px) {
+  .works {
+    padding: calc(48px + 40px) var(--spacing-2) var(--spacing-8);
+  }
 }

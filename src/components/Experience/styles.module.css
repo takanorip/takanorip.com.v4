@@ -16,11 +16,12 @@
   position: absolute;
   top: 52px;
   bottom: 52px;
-  left: 115px;
+  left: 119px;
 }
 
 .item {
-  display: flex;
+  display: grid;
+  grid-template-columns: 66px 8px 1fr;
   align-items: center;
   gap: var(--spacing-3);
   position: relative;
@@ -45,8 +46,6 @@
 }
 
 .company {
-  font-size: var(--font-size-large);
-  font-weight: bold;
   color: var(--science-blue);
 }
 

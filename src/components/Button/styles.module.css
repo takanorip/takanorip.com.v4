@@ -9,4 +9,11 @@ a.button {
   color: var(--white);
   background-color: var(--science-blue);
   border-radius: var(--border-radius-default);
+  border: 1px solid var(--science-blue);
+  transition: background-color 0.3s var(--ease-out-cubic), color 0.3s var(--ease-out-cubic);
+}
+
+a.button:hover {
+  background-color: var(--white);
+  color: var(--science-blue);
 }

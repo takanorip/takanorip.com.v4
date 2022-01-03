@@ -28,7 +28,9 @@ const Work: FunctionComponent<Props> = ({ data }) => {
               </dd>
             </dl>
           </div>
-          <Button to={data.link} icon={<ExternalLink />}>View details</Button>
+          <div className={Styles.button}>
+            <Button className={Styles.detailButton} to={data.link} icon={<ExternalLink />}>View details</Button>
+          </div>
         </div>
       </div>
       <figure className={Styles.figure}>

@@ -15,17 +15,19 @@ const Works = ({ works }) => {
   }
   return (
     <div className={Styles.works}>
-      <div className={Styles.tabWrapper}>
-        <button className={cx(Styles.tab, { [Styles.active]: currentFilter === 'All' })} onClick={() => {
-          setFilteredWorks(works);
-          setCurrentFilter('All');
-        }} role="button">All</button>
-        {categoryList.map(l => (
-          <button className={cx(Styles.tab, { [Styles.active]: currentFilter === l })} onClick={() => filter(l)} role="button">{l}</button>
-        ))}
+      <div className={Styles.tabOverflow}>
+        <div className={Styles.tabWrapper}>
+          <button className={cx(Styles.tab, { [Styles.active]: currentFilter === 'All' })} onClick={() => {
+            setFilteredWorks(works);
+            setCurrentFilter('All');
+          }} role="button">All</button>
+          {categoryList.map(l => (
+            <button className={cx(Styles.tab, { [Styles.active]: currentFilter === l })} onClick={() => filter(l)} role="button">{l}</button>
+          ))}
+        </div>
       </div>
       <div className={Styles.grid}>
-        {filteredWorks.map(item => <WorkItem item={item} />)}
+        {filteredWorks.map(item => <WorkItem className={Styles.item} item={item} />)}
       </div>
     </div>
   );

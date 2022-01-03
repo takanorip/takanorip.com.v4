@@ -4,6 +4,7 @@ import Button from '../Button/index';
 import Experience from '../Experience/index';
 import Activity from '../Activity/index';
 import WorkItem from '../WorkItem/index';
+import Aside from '../Aside/index';
 import ArrowRight from '../Svg/ArrowRight';
 import Styles from './styles.module.css';
 
@@ -14,15 +15,17 @@ const Main: FunctionalComponent = ({ works }) => {
     <main className={Styles.main}>
       <div>
         <p className={Styles.keyText}>I'm <span className={Styles.blue}>takanorip</span>.<br />Design Engineer.</p>
-        <p className={Styles.subText}>I'm interested in systemizing the design and implementation of UI.</p>
+        <p className={Styles.subText}>Systemizing the design and implementation of UI.</p>
       </div>
       <section className={Styles.section}>
         <h2 className={Styles.title}>About me</h2>
+        <div className={Styles.aside}>
+          <Aside />
+        </div>
         <div className={Styles.text}>
-          <p><span className={Styles.blue}>takanorip / 大木尊紀 / Takanori Oki</span>です。日本在住のUIデザイナー/フロントエンドエンジニアです。WebとUIが好きで、デザインと開発の両面からUIに関わっています。</p>
-          <p>現在は classNameDo のUIデザイナーとしてビデオチャットアプリのUIデザインやデザインガイドラインの構築などを行ったり、副業フロントエンドエンジニアとしてReactのアプリケーション開発をしたりしています。</p>
-          <p>UIやWebフロントエンド全般に興味があります。特にウェブフォント、Web Components、 Figmaが好きで、様々なツールを開発したり記事を書いたりしています。最近はデザインと実装をつなぐシステムにも興味があり、デザインシステムの構築や実装にも取り組んでいます。</p>
-          <p>イベントやカンファレンスへの登壇や本の執筆なども積極的に行っています。登壇や執筆、副業などお気軽にご相談ください。</p>
+          <p>I'm a design engineer living in Japan, I love web and UI, and I'm involved in UI from both design and development sides.</p>
+          <p>I'm interested in UI and web frontend in general. I'm particularly interested in web fonts, web components, and Figma, and I've been developing various tools and writing articles about them. Recently, I'm also interested in technologies that connect design and development, and I'm working on building and implementing design systems.</p>
+          <p>I am also actively involved in speaking at events and conferences, and writing books. Please feel free to contact me for speaking engagements, writing, or side projects.</p>
         </div>
       </section>
       <section className={Styles.section}>

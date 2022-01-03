@@ -28,9 +28,46 @@ a.snsLink {
   align-items: center;
   gap: var(--spacing-2);
   line-height: 24px;
-  font-weight: bold;
   color: var(--white);
 }
 .snsLink:hover {
   text-decoration: underline;
+}
+
+@media screen and (max-width: 1007px) {
+  .aside {
+    width: 100%;
+    height: auto;
+    position: initial;
+  }
+  .snsList {
+    padding: var(--spacing-2);
+    flex-direction: row;
+    gap: 0;
+  }
+  a.snsLink {
+    flex: 1;
+    flex-direction: column;
+    gap: var(--spacing-1);
+    font-size: var(--font-size-small);
+    line-height: 1.5;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .snsList {
+    padding: 0;
+    position: fixed;
+    bottom: var(--spacing-1);
+    left: var(--spacing-1);
+    right: var(--spacing-1);
+    z-index: 2;
+  }
+  a.snsLink {
+    height: 48px;
+    font-size: 0;
+    gap: 0;
+    line-height: 0;
+    justify-content: center;
+  }
 }
