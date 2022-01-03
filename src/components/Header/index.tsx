@@ -1,5 +1,5 @@
 import { h } from 'preact';
-import { useState } from 'preact/hooks';
+import { useState, useEffect, useRef } from 'preact/hooks';
 import Styles from './styles.module.css';
 import ExternalLink from '../Svg/ExternalLink';
 import cx from 'classnames';
@@ -10,8 +10,30 @@ type HeaderProps = {
 
 const Header = ({ dir }: HeaderProps) => {
 
+  const useOnClickOutside = (ref, handler) => {
+    useEffect(
+      () => {
+        const listener = (e) => {
+          if (!ref.current || ref.current.contains(event.target)) return
+          handler(e);
+        };
+        document.addEventListener("mousedown", listener);
+        document.addEventListener("touchstart", listener);
+        return () => {
+          document.removeEventListener("mousedown", listener);
+          document.removeEventListener("touchstart", listener);
+        };
+      },
+      [ref, handler]
+    );
+  }
+
   const [open, setOpen] = useState(false);
   const toggle = () => setOpen(!open);
+  const close = () => setOpen(false);
+
+  const menu = useRef(null);  
+  useOnClickOutside(menu, () => setOpen(false));
 
   return (
     <header className={Styles.header}>
@@ -86,7 +108,7 @@ const Header = ({ dir }: HeaderProps) => {
               <path d="M5 7.5L10 12.5L15 7.5" stroke="#525960" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
           </button>
-          <nav className={cx(Styles.menu, { [Styles.open]: open })}>
+          <nav ref={menu} className={cx(Styles.menu, { [Styles.open]: open })}>
             <a className={cx(Styles.menuItem, { [Styles.current]: dir === 'about' })} href="/">about</a>
             <a className={cx(Styles.menuItem, { [Styles.current]: dir === 'works' })} href="/works">works</a>
             <a className={cx(Styles.menuItem, Styles.navItemBlog)} href="https://blog.takanorip.com">
