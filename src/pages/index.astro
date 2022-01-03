@@ -43,7 +43,7 @@ const data = await response.json();
     </style>
   </head>
   <body>
-    <Header dir="about" />
+    <Header dir="about" client:visible />
     <div class="about">
       <Main works={data.contents} />
       <div class="aside">

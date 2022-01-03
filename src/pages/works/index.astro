@@ -22,7 +22,7 @@ const data = await response.json();
     <MainHead title="All Projects | Jeanine White" description="Learn about Jenine White's most recent projects" />
   </head>
   <body>
-    <Header dir='works' />
+    <Header dir='works' client:visible />
     <Works works={data.contents} client:visible />
     <Footer />
   </body>

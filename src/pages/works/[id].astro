@@ -28,7 +28,7 @@ const { item } = Astro.props;
     <MainHead />
   </head>
   <body>
-    <Header dir="works" />
+    <Header dir="works" client:visible />
     <Work data={item} />
     <Footer />
   </body>

@@ -82,11 +82,21 @@
   .subText {
     font-size: var(--font-size-default);
   }
+  .title {
+    margin-bottom: var(--spacing-3);
+  }
   .works {
     display: grid;
     gap: var(--spacing-2);
     grid-template-columns: none;
     grid-template-rows: 1fr 1fr 1fr;
+  }
+  .buttonWrapper {
+    margin-top: var(--spacing-3);
+  }
+  a.button {
+    width: 100%;
+    justify-content: center;
   }
   .subGrid {
     display: flex;

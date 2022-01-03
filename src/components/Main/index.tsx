@@ -34,7 +34,7 @@ const Main: FunctionalComponent = ({ works }) => {
           {featuredWorks.map(item => <WorkItem className={Styles.workItem} item={item} />)}
         </div>
         <div className={Styles.buttonWrapper}>
-          <Button to="/works" icon={<ArrowRight />}>View all works</Button>
+          <Button className={Styles.button} to="/works" icon={<ArrowRight />}>View all works</Button>
         </div>
       </section>
       <div className={Styles.subGrid}>
