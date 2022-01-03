@@ -21,11 +21,13 @@ export const getStaticPaths = async () => {
 
 const { item } = Astro.props;
 
+const strippedDescription = item.description.replace(/(<([^>]+)>)/gi, "");
+
 ---
 
 <html lang="en">
   <head>
-    <MainHead />
+    <MainHead title={`${item.title} | office takanorip`} description={strippedDescription} />
   </head>
   <body>
     <Header dir="works" client:visible />

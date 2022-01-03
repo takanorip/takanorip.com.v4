@@ -1,11 +1,12 @@
 ---
-const { title = 'takanoip portfolio', description = 'The Portfolio of takanrip, a Design Engeneer' } = Astro.props;
+const { title = 'office takanorip', description = 'The Portfolio of takanrip, a Design Engeneer' } = Astro.props;
 ---
 
 <meta charset="UTF-8" />
 <meta name="description" property="og:description" content={description} />
 <meta name="viewport" content="width=device-width" />
 <title>{title}</title>
+<meta name="twitter:card" content="summary" />
 
 <link rel="icon" type="image/x-icon" href="/favicon.ico" />
 <link rel="stylesheet" type="text/css" href={Astro.resolve('../styles/global.css')} />
