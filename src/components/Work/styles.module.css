@@ -35,6 +35,29 @@
 
 .infoCategory {
   color: var(--science-blue);
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-1);
+  flex-wrap: wrap;
+}
+
+.infoCategoryItem {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-1);
+}
+
+.infoCategoryItem::before {
+  content: '';
+  display: block;
+  width: 4px;
+  height: 4px;
+  background-color: var(--science-blue);
+  border-radius: 2px;
+}
+
+.infoCategoryItem:first-child::before {
+  content: none;
 }
 
 .figure {
@@ -61,7 +84,6 @@
 
 .description {
   letter-spacing: 0.4px;
-  line-height: 1.8;
 }
 
 .description a {
