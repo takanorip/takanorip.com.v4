@@ -44,7 +44,6 @@
 .tab.active {
   color: var(--white);
   background-color: var(--science-blue);
-  font-weight: bold;
   border: none;
 }
 
