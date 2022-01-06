@@ -42,7 +42,6 @@
 .navItem.active {
   color: var(--white);
   background-color: var(--science-blue);
-  pointer-events: none;
 }
 
 .navItem:hover {

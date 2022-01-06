@@ -9,6 +9,25 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: var(--spacing-2);
+  opacity: 0;
+  transform: translateY(12px);
+}
+@keyframes works {
+  0% {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.animate {
+  animation-name: works;
+  animation-fill-mode: forwards;
+  opacity: 0;
+  animation-duration: 0.3s;
+  position: relative;
 }
 .tabOverflow {
   overflow-x: scroll;
