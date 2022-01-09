@@ -12,7 +12,9 @@
   --scarpa-flow: #525960;
   --bunker: #001319;
   --ease-out-expo: cubic-bezier(0.19, 1, 0.22, 1);
+  --ease-in-expo: cubic-bezier(0.7, 0, 0.84, 0);
   --ease-out-cubic: cubic-bezier(0.33, 1, 0.68, 1);
+  --ease-in-out-cubic: cubic-bezier(0.65, 0, 0.35, 1);
   --spacing-0: 0.25rem;
   --spacing-1: 0.5rem;
   --spacing-05: 0.75rem;

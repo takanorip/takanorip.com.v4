@@ -1,0 +1,48 @@
+@keyframes tree {
+  from {
+    filter: blur(15px);
+  }
+  to {
+    filter: blur(0);
+  }
+}
+
+@keyframes loading {
+  from {
+    visibility: visible;
+    opacity: 1;
+  }
+  to {
+    visibility: hidden;
+    opacity: 0;
+  }
+}
+
+.loading {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--white);
+  z-index: 9;
+  color: var(--forest-green);
+  animation-name: loading;
+  animation-fill-mode: forwards;
+  animation-timing-function: var(--ease-out-cubic);
+  animation-duration: 0.3s;
+  animation-delay: 0.5s;
+}
+
+.tree {
+  max-width: calc(100% - 32px);
+  max-height: calc(100% - 32px);
+  /* animation-name: tree;
+  animation-fill-mode: forwards;
+  animation-timing-function: var(--ease-out-cubic);
+  animation-duration: 0.8s; */
+  opacity: 0.8;
+}
