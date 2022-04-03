@@ -4,7 +4,7 @@ import Styles from './styles.module.css';
 const Aside = () => {
   return (
     <aside className={Styles.aside}>
-      <figure className={Styles.profile}><img className={Styles.image} src="/assets/profile.png" alt="takanorip profile image" /></figure>
+      <figure className={Styles.profile}><img className={Styles.image} src="/assets/profile.webp" alt="takanorip profile image" /></figure>
       <div className={Styles.snsList}>
         <a className={Styles.snsLink} href="https://twitter.com/takanoripe">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
