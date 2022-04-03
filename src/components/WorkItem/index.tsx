@@ -11,7 +11,7 @@ const WorkItem: FunctionalComponent = ({ item, className }) => {
       className={cx(Styles.card, className)}
     >
       <figure className={Styles.imageWrapper}>
-        <img loading="lazy" className={Styles.image} src={item.image.url+'?fm=webp'} alt={item.title} />
+        <img loading="lazy" className={Styles.image} src={item.image.url} alt={item.title} />
       </figure>
       <div className={Styles.wrapper}>
         <p className={Styles.title}>{item.title}</p>
