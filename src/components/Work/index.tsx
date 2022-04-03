@@ -34,7 +34,7 @@ const Work: FunctionComponent<Props> = ({ data }) => {
         </div>
       </div>
       <figure className={Styles.figure}>
-        <img className={Styles.image} src={data.image.url} alt={data.title} />
+        <img className={Styles.image} src={data.image.url+'?fm=webp'} alt={data.title} />
       </figure>
       <div className={Styles.descriptionWrapper}>
         <div className={Styles.description} dangerouslySetInnerHTML={{ __html: data.description }}></div>
