@@ -1,6 +1,6 @@
 import type { FunctionalComponent } from 'preact';
 import { h } from 'preact';
-import { format } from 'date-fns'
+import { format, addHours } from 'date-fns'
 import cx from 'classnames';
 import Styles from './styles.module.css';
 
@@ -20,7 +20,7 @@ const WorkItem: FunctionalComponent = ({ item, className }) => {
             <div className={Styles.tag}>{c}</div>
           ))}
         </div>
-        <p className={Styles.date}>{format(new Date(item.publishDate), 'MMM, yyyy')}</p>
+        <p className={Styles.date}>{format(addHours(new Date(item.publishDate), 9), 'MMM, yyyy')}</p>
       </div>
     </a>
   );
