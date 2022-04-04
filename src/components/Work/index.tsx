@@ -17,7 +17,7 @@ const Work: FunctionComponent<Props> = ({ data }) => {
           <div className={Styles.info}>
             <dl className={Styles.infoItem}>
               <dt className={Styles.infoTitle}>Date</dt>
-              <dd className={Styles.infoDate}>{format(addHours(new Date(item.publishDate), 9), 'MMM, yyyy')}</dd>
+              <dd className={Styles.infoDate}>{format(addHours(new Date(data.publishDate), 9), 'MMM, yyyy')}</dd>
             </dl>
             <dl className={Styles.infoItem}>
               <dt className={Styles.infoTitle}>Category</dt>
