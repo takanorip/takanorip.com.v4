@@ -2,7 +2,7 @@ import { h, FunctionComponent } from 'preact';
 import Button from '../Button/index';
 import ExternalLink from '../Svg/ExternalLink';
 import Styles from './styles.module.css';
-import { format } from 'date-fns'
+import { format, addHours } from 'date-fns'
 
 type Props = {
   data: any;
@@ -17,7 +17,7 @@ const Work: FunctionComponent<Props> = ({ data }) => {
           <div className={Styles.info}>
             <dl className={Styles.infoItem}>
               <dt className={Styles.infoTitle}>Date</dt>
-              <dd className={Styles.infoDate}>{format(new Date(data.publishDate), 'MMM, yyyy')}</dd>
+              <dd className={Styles.infoDate}>{format(addHours(new Date(item.publishDate), 9), 'MMM, yyyy')}</dd>
             </dl>
             <dl className={Styles.infoItem}>
               <dt className={Styles.infoTitle}>Category</dt>
