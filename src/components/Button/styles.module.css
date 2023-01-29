@@ -1,4 +1,4 @@
-a.button {
+.button {
   display: flex;
   align-items: center;
   gap: var(--spacing-05);
@@ -13,7 +13,11 @@ a.button {
   transition: background-color 0.3s var(--ease-out-cubic), color 0.3s var(--ease-out-cubic);
 }
 
-a.button:hover {
+.button:visited {
+  color: var(--white);
+}
+
+.button:hover {
   background-color: var(--white);
   color: var(--science-blue);
 }

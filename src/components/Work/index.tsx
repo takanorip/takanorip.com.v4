@@ -1,4 +1,4 @@
-import { h, FunctionComponent } from 'preact';
+import { FC } from 'react';
 import Button from '../Button/index';
 import ExternalLink from '../Svg/ExternalLink';
 import Styles from './styles.module.css';
@@ -8,7 +8,7 @@ type Props = {
   data: any;
 };
 
-const Work: FunctionComponent<Props> = ({ data }) => {  
+const Work: FC<Props> = ({ data }) => {  
   return (
     <div className={Styles.wrapper}>
       <div className={Styles.titleWrapper}>

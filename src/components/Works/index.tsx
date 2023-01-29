@@ -1,8 +1,7 @@
-import { h } from 'preact';
-import { useState, useEffect } from 'preact/hooks';
+import { useState, useEffect } from 'react';
 import cx from 'classnames';
 import WorkItem from '../../components/WorkItem/index';
-import Styles from './styles.module.css';
+import styles from './styles.module.css';
 
 const Works = ({ works }) => {
   const categoryList = ['Design', 'Development', 'Speaking', 'Writing'];
@@ -25,20 +24,20 @@ const Works = ({ works }) => {
   }, [currentFilter]);
 
   return (
-    <div className={Styles.works}>
-      <div className={Styles.tabOverflow}>
-        <div className={Styles.tabWrapper}>
-          <button className={cx(Styles.tab, { [Styles.active]: currentFilter === 'All' })} onClick={() => {
+    <div className={styles.works}>
+      <div className={styles.tabOverflow}>
+        <div className={styles.tabWrapper}>
+          <button className={cx(styles.tab, { [styles.active]: currentFilter === 'All' })} onClick={() => {
             setFilteredWorks(works);
             setCurrentFilter('All');
           }} role="button">All</button>
           {categoryList.map(l => (
-            <button className={cx(Styles.tab, { [Styles.active]: currentFilter === l })} onClick={() => setCurrentFilter(l)} role="button">{l}</button>
+            <button className={cx(styles.tab, { [styles.active]: currentFilter === l })} onClick={() => setCurrentFilter(l)} role="button">{l}</button>
           ))}
         </div>
       </div>
-      <div className={cx(Styles.grid, { [Styles.animate]: animate })}>
-        {filteredWorks.map(item => <WorkItem className={Styles.item} item={item} />)}
+      <div className={cx(styles.grid, { [styles.animate]: animate })}>
+        {filteredWorks.map(item => <WorkItem item={item} />)}
       </div>
     </div>
   );

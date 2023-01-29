@@ -1,21 +1,20 @@
-import { h } from 'preact';
-import Styles from './styles.module.css';
+import styles from './styles.module.css';
 import { experiences } from './data';
 
 const Experience = () => {
   return (
-    <div className={Styles.wrapper}>
+    <div className={styles.wrapper}>
       {experiences.map(item => (
-        <div className={Styles.item}>
-          <div className={Styles.period}>
-            <p className={Styles.end}>{item.end || 'Now'}</p>
-            <p className={Styles.hyphen}>-</p>
-            <p className={Styles.start}>{item.start}</p>
+        <div className={styles.item}>
+          <div className={styles.period}>
+            <p className={styles.end}>{item.end || 'Now'}</p>
+            <p className={styles.hyphen}>-</p>
+            <p className={styles.start}>{item.start}</p>
           </div>
-          <div className={Styles.dot}></div>
-          <div className={Styles.detail}>
-            <p className={Styles.company}>{item.company}</p>
-            <p className={Styles.role}>{item.role}</p>
+          <div className={styles.dot}></div>
+          <div className={styles.detail}>
+            <p className={styles.company}>{item.company}</p>
+            <p className={styles.role}>{item.role}</p>
           </div>
         </div>
       ))}

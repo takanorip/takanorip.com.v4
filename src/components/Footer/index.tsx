@@ -1,9 +1,8 @@
-import { h } from 'preact';
-import Styles from './styles.module.css';
+import styles from './styles.module.css';
 
 const Footer = () => {
   return (
-    <footer className={Styles.footer}>&copy; {new Date().getFullYear()} office takanorip</footer>
+    <footer className={styles.footer}>&copy; {new Date().getFullYear()} office takanorip</footer>
   );
 }
 

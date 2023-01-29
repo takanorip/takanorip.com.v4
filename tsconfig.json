@@ -1,5 +1,12 @@
 {
   "compilerOptions": {
-    "moduleResolution": "node"
+    "moduleResolution": "node",
+    "plugins": [
+      {
+        "name": "typescript-plugin-css-modules"
+      }
+    ],
+    "jsx": "react-jsx",
+    "jsxImportSource": "react"
   }
 }
