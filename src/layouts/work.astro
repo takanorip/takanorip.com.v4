@@ -1,18 +1,16 @@
 ---
-import MainHead from '../components/MainHead.astro';
-import Button from '../components/Button/index';
-import Footer from '../components/Footer/index';
-import Header from '../components/Header/index';
+import MainHead from "../components/MainHead.astro";
+import Button from "../components/Button/index";
+import Footer from "../components/Footer/index";
+import Header from "../components/Header/index";
 
 const { content } = Astro.props;
 ---
 
-<html lang={content.lang || 'en'}>
+<html lang={content.lang || "en"}>
   <head>
     <MainHead title={content.title} description={content.description} />
-    <style>
-      
-    </style>
+    <style></style>
   </head>
   <body>
     <Header dir="works" />

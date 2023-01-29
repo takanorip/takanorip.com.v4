@@ -29,7 +29,7 @@
 }
 .title::before {
   display: block;
-  content: '';
+  content: "";
   width: 20px;
   height: 12px;
   border-radius: 6px;

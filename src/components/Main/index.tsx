@@ -1,20 +1,25 @@
-import type { FunctionalComponent } from 'preact';
-import Button from '../Button/index';
-import Experience from '../Experience/index';
-import Activity from '../Activity/index';
-import WorkItem from '../WorkItem/index';
-import Aside from '../Aside/index';
-import ArrowRight from '../Svg/ArrowRight';
-import styles from './styles.module.css';
+import type { FunctionalComponent } from "preact";
+import Button from "../Button/index";
+import Experience from "../Experience/index";
+import Activity from "../Activity/index";
+import WorkItem from "../WorkItem/index";
+import Aside from "../Aside/index";
+import ArrowRight from "../Svg/ArrowRight";
+import styles from "./styles.module.css";
 
 const Main: FunctionalComponent = ({ works }) => {
-  const featuredWorks = works.filter(item => item.isFeatured);
+  const featuredWorks = works.filter((item) => item.isFeatured);
 
   return (
     <main className={styles.main}>
       <div>
-        <p className={styles.keyText}>I'm <span className={styles.blue}>takanorip</span>.<br />Design Engineer.</p>
-        <p className={styles.subText}>Systemizing the design and implementation of UI.</p>
+        <p className={styles.keyText}>
+          I'm <span className={styles.blue}>takanorip</span>.<br />
+          Design Engineer.
+        </p>
+        <p className={styles.subText}>
+          Systemizing the design and implementation of UI.
+        </p>
       </div>
       <section className={styles.section}>
         <h2 className={styles.title}>About me</h2>
@@ -22,18 +27,36 @@ const Main: FunctionalComponent = ({ works }) => {
           <Aside />
         </div>
         <div className={styles.text}>
-          <p>I'm a design engineer living in Japan, I love web and UI, and I'm involved in UI from both design and development sides.</p>
-          <p>I'm interested in UI and web frontend in general. I'm particularly interested in web fonts, web components, and Figma, and I've been developing various tools and writing articles about them. Recently, I'm also interested in technologies that connect design and development, and I'm working on building and implementing design systems.</p>
-          <p>I am also actively involved in speaking at events and conferences, and writing books. Please feel free to contact me for speaking engagements, writing, or side projects.</p>
+          <p>
+            I'm a design engineer living in Japan, I love web and UI, and I'm
+            involved in UI from both design and development sides.
+          </p>
+          <p>
+            I'm interested in UI and web frontend in general. I'm particularly
+            interested in web fonts, web components, and Figma, and I've been
+            developing various tools and writing articles about them. Recently,
+            I'm also interested in technologies that connect design and
+            development, and I'm working on building and implementing design
+            systems.
+          </p>
+          <p>
+            I am also actively involved in speaking at events and conferences,
+            and writing books. Please feel free to contact me for speaking
+            engagements, writing, or side projects.
+          </p>
         </div>
       </section>
       <section className={styles.section}>
         <h2 className={styles.title}>Featured works</h2>
         <div className={styles.works}>
-          {featuredWorks.map(item => <WorkItem className={styles.workItem} item={item} />)}
+          {featuredWorks.map((item) => (
+            <WorkItem className={styles.workItem} item={item} />
+          ))}
         </div>
         <div className={styles.buttonWrapper}>
-          <Button className={styles.button} to="/works" icon={<ArrowRight />}>View all works</Button>
+          <Button className={styles.button} to="/works" icon={<ArrowRight />}>
+            View all works
+          </Button>
         </div>
       </section>
       <div className={styles.subGrid}>
@@ -48,6 +71,6 @@ const Main: FunctionalComponent = ({ works }) => {
       </div>
     </main>
   );
-}
+};
 
 export default Main;

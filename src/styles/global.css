@@ -1,14 +1,14 @@
 :root {
-  --supernova: #FDC400;
-  --solitude: #E3F2FE;
-  --picton-blue: #00C0FD;
-  --azure-radiance: #007DFD;
-  --science-blue: #0064CA;
-  --ottoman: #E6F4E8;
-  --forest-green: #008D18;
-  --white: #FFFFFF;
-  --wild-sand: #F4F5F6;
-  --alto: #DDE0E4;
+  --supernova: #fdc400;
+  --solitude: #e3f2fe;
+  --picton-blue: #00c0fd;
+  --azure-radiance: #007dfd;
+  --science-blue: #0064ca;
+  --ottoman: #e6f4e8;
+  --forest-green: #008d18;
+  --white: #ffffff;
+  --wild-sand: #f4f5f6;
+  --alto: #dde0e4;
   --scarpa-flow: #525960;
   --bunker: #001319;
   --ease-out-expo: cubic-bezier(0.19, 1, 0.22, 1);
@@ -51,7 +51,19 @@ body {
   line-height: 1.5;
 }
 
-header, h1, h2, h3, p, a, div, ul, li, figure, dl, dd, button {
+header,
+h1,
+h2,
+h3,
+p,
+a,
+div,
+ul,
+li,
+figure,
+dl,
+dd,
+button {
   margin: 0;
   box-sizing: border-box;
 }

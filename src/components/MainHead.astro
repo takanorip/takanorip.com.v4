@@ -1,27 +1,36 @@
 ---
-import styleUrl from '../styles/global.css';
-const { title = 'office takanorip', description = 'The Portfolio of takanrip, a Design Engeneer' } = Astro.props;
+import styleUrl from "../styles/global.css";
+const {
+  title = "office takanorip",
+  description = "The Portfolio of takanrip, a Design Engeneer",
+} = Astro.props;
 ---
 
 <meta charset="UTF-8" />
 <meta name="description" property="og:description" content={description} />
-<meta property="og:image" content="https://takanorip.com/assets/ogp.png">
-<meta property="og:image:alt" content="office takanorip">
+<meta property="og:image" content="https://takanorip.com/assets/ogp.png" />
+<meta property="og:image:alt" content="office takanorip" />
 <meta name="viewport" content="width=device-width" />
 <title>{title}</title>
 <meta name="twitter:card" content="summary_large_image" />
 
 <link rel="icon" type="image/x-icon" href="/favicon.ico" />
 <link rel="stylesheet" type="text/css" href={styleUrl} />
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;700&display=swap"
+  rel="stylesheet"
+/>
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-VJ95WWW3Q4"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-VJ95WWW3Q4"
+></script>
 <script>
   window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-VJ95WWW3Q4');
+  function gtag() {
+    dataLayer.push(arguments);
+  }
+  gtag("js", new Date());
+  gtag("config", "G-VJ95WWW3Q4");
 </script>

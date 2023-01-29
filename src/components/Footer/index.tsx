@@ -1,9 +1,11 @@
-import styles from './styles.module.css';
+import styles from "./styles.module.css";
 
 const Footer = () => {
   return (
-    <footer className={styles.footer}>&copy; {new Date().getFullYear()} office takanorip</footer>
+    <footer className={styles.footer}>
+      &copy; {new Date().getFullYear()} office takanorip
+    </footer>
   );
-}
+};
 
 export default Footer;

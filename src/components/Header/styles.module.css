@@ -81,7 +81,8 @@
   z-index: 4;
   width: 120px;
   background-color: var(--white);
-  box-shadow: 0px 2px 4px rgba(0, 19, 25, 0.06), 0px 6px 12px rgba(0, 19, 25, 0.08), 0px 12px 20px rgba(0, 19, 25, 0.06);
+  box-shadow: 0px 2px 4px rgba(0, 19, 25, 0.06),
+    0px 6px 12px rgba(0, 19, 25, 0.08), 0px 12px 20px rgba(0, 19, 25, 0.06);
   border: 1px solid var(--alto);
   padding: var(--spacing-0);
   border-radius: var(--border-radius-default);
@@ -102,12 +103,12 @@ a.menuItem {
 }
 
 a.menuItem.current::before {
-  content: '';
+  content: "";
   display: block;
   width: 20px;
   height: 20px;
   position: absolute;
-  background-image: url('/assets/check.svg');
+  background-image: url("/assets/check.svg");
   background-repeat: no-repeat;
   background-size: contain;
   top: 10px;

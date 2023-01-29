@@ -9,7 +9,7 @@
 }
 
 .wrapper::before {
-  content: '';
+  content: "";
   display: block;
   width: 2px;
   background-color: var(--alto);

@@ -1,10 +1,10 @@
-import styles from './styles.module.css';
-import { activities } from './data';
+import styles from "./styles.module.css";
+import { activities } from "./data";
 
 const Activity = () => {
   return (
     <div className={styles.activity}>
-      {activities.map(item => (
+      {activities.map((item) => (
         <a className={styles.item} href={item.link}>
           <p className={styles.title}>{item.title}</p>
           <p className={styles.category}>{item.category}</p>
@@ -12,6 +12,6 @@ const Activity = () => {
       ))}
     </div>
   );
-}
+};
 
 export default Activity;
