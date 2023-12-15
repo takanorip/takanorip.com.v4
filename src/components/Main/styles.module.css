@@ -76,7 +76,7 @@
     gap: var(--spacing-8);
   }
   .keyText {
-    font-size: 17.6vw;
+    font-size: 10.6vw;
   }
   .subText {
     font-size: var(--font-size-default);

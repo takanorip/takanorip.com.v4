@@ -1,6 +1,7 @@
 .header {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   padding: var(--spacing-3) var(--spacing-5);
   border-bottom: 1px solid var(--alto);
   position: fixed;
@@ -17,13 +18,9 @@
   align-items: center;
 }
 
-.nameLogo {
-  height: 24px;
-}
-
-.treeLogo {
-  width: 48px;
-  height: 48px;
+.logo svg {
+  width: auto;
+  height: 2rem;
 }
 
 .nav {
@@ -32,6 +29,10 @@
 }
 
 .navItem {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 3rem;
   line-height: 48px;
   padding: 0 var(--spacing-2);
   border-radius: var(--border-radius-default);
@@ -43,6 +44,7 @@
 .navItem.active {
   color: var(--white);
   background-color: var(--science-blue);
+  pointer-events: none;
 }
 
 .navItem:hover {
@@ -140,13 +142,9 @@ a.menuItem.current::before {
     align-items: center;
     justify-content: center;
   }
-  .nameLogo {
-    width: 128px;
-    height: 16px;
-  }
-  .treeLogo {
-    width: 24px;
-    height: 24px;
+  .logo svg {
+    width: auto;
+    height: 1.5rem;
   }
   .nav {
     display: none;
