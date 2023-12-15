@@ -3,7 +3,6 @@ import MainHead from "../../components/MainHead.astro";
 import Footer from "../../components/Footer/index";
 import Header from "../../components/Header/index";
 import Works from "../../components/Works/index";
-import Loading from "../../components/Loading/index";
 
 interface MarkdownFrontmatter {
   publishDate: number;
@@ -26,7 +25,6 @@ const data = await response.json();
     />
   </head>
   <body>
-    <Loading client:visible />
     <Header dir="works" client:visible />
     <Works works={data.contents} client:visible />
     <Footer />

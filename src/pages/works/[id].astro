@@ -2,7 +2,6 @@
 import MainHead from "../../components/MainHead.astro";
 import Header from "../../components/Header/index";
 import Work from "../../components/Work/index";
-import Loading from "../../components/Loading/index";
 
 export const getStaticPaths = async () => {
   const apiUrl = `https://takanorip.microcms.io/api/v1/works?limit=1000`;
@@ -33,7 +32,6 @@ const strippedDescription = item.description.replace(/(<([^>]+)>)/gi, "");
     />
   </head>
   <body>
-    <Loading client:visible />
     <Header dir="works" client:visible />
     <Work data={item} />
   </body>

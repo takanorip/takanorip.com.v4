@@ -4,9 +4,9 @@ import styles from "./styles.module.css";
 
 type Props = {
   to: string;
-  icon: ReactNode;
+  icon?: ReactNode;
   children: ReactNode;
-  className: string;
+  className?: string;
 };
 
 const Button: FC<Props> = ({ to, children, icon, className }) => {
