@@ -38,7 +38,8 @@
 .text {
   display: flex;
   flex-direction: column;
-  gap: var(--spacing-2);
+  gap: 1.7em;
+  line-height: 1.7;
 }
 .blue {
   color: var(--science-blue);

@@ -1,4 +1,4 @@
-import type { FunctionalComponent } from "preact";
+import type { FC } from "react";
 import Button from "../Button/index";
 import Experience from "../Experience/index";
 import Activity from "../Activity/index";
@@ -7,7 +7,11 @@ import Aside from "../Aside/index";
 import ArrowRight from "../Svg/ArrowRight";
 import styles from "./styles.module.css";
 
-const Main: FunctionalComponent = ({ works }) => {
+type Props = {
+  works: any;
+};
+
+const Main: FC<Props> = ({ works }) => {
   const featuredWorks = works.filter((item) => item.isFeatured);
 
   return (
@@ -28,8 +32,8 @@ const Main: FunctionalComponent = ({ works }) => {
         </div>
         <div className={styles.text}>
           <p>
-            I'm a design engineer living in Japan, I love web and UI, and I'm
-            involved in UI from both design and development sides.
+            I'm a digital design engineer living in Japan, I love Web and UI,
+            and I'm involved in UI from both design and development sides.
           </p>
           <p>
             I'm interested in UI and web frontend in general. I'm particularly

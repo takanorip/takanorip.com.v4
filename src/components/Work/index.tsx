@@ -30,15 +30,17 @@ const Work: FC<Props> = ({ data }) => {
               </dd>
             </dl>
           </div>
-          <div className={Styles.button}>
-            <Button
-              className={Styles.detailButton}
-              to={data.link}
-              icon={<ExternalLink />}
-            >
-              View details
-            </Button>
-          </div>
+          {data.link && (
+            <div className={Styles.button}>
+              <Button
+                className={Styles.detailButton}
+                to={data.link}
+                icon={<ExternalLink />}
+              >
+                View details
+              </Button>
+            </div>
+          )}
         </div>
       </div>
       <figure className={Styles.figure}>

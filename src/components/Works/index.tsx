@@ -46,6 +46,7 @@ const Works = ({ works }) => {
               })}
               onClick={() => setCurrentFilter(l)}
               role="button"
+              key={l}
             >
               {l}
             </button>
@@ -54,7 +55,7 @@ const Works = ({ works }) => {
       </div>
       <div className={cx(styles.grid, { [styles.animate]: animate })}>
         {filteredWorks.map((item) => (
-          <WorkItem item={item} />
+          <WorkItem key={item} item={item} />
         ))}
       </div>
     </div>

@@ -1,9 +1,14 @@
-import type { FunctionalComponent } from "preact";
+import type { FC } from "react";
 import { format, addHours } from "date-fns";
 import cx from "classnames";
 import styles from "./styles.module.css";
 
-const WorkItem: FunctionalComponent = ({ item, className }) => {
+type Props = {
+  item: any;
+  className?: string;
+};
+
+const WorkItem: FC<Props> = ({ item, className }) => {
   return (
     <a href={`/works/${item.id}`} className={cx(styles.card, className)}>
       <figure className={styles.imageWrapper}>
