@@ -83,7 +83,12 @@
 }
 
 .description {
+  display: flex;
+  flex-direction: column;
   letter-spacing: 0.4px;
+  gap: 1.5em;
+  line-height: 1.5;
+  font-size: var(--font-size-bold);
 }
 
 .description a {
