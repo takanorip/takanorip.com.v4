@@ -1,14 +1,13 @@
 .works {
   width: 100%;
-  max-width: 1440px;
   min-height: calc(100% - 48px);
   margin: 0 auto;
-  padding: calc(96px + 40px) var(--spacing-5) var(--spacing-13);
+  padding: calc(96px + 40px) var(--spacing-2) var(--spacing-13);
 }
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: var(--spacing-2);
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: var(--spacing-5) var(--spacing-2);
   opacity: 0;
   transform: translateY(12px);
 }
@@ -72,6 +71,6 @@
     overflow: auto;
   }
   .grid {
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fit, 100%);
   }
 }

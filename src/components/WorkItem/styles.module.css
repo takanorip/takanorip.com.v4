@@ -1,25 +1,18 @@
 .card {
   display: flex;
   flex-direction: column;
-  height: 240px;
-  border-radius: var(--border-radius-default);
+  gap: var(--spacing-1);
   position: relative;
-  background-color: rgba(0, 19, 25, 0.72);
   transition: background-color 0.3s var(--ease-out-cubic);
-}
-
-.card:hover {
-  background-color: rgba(0, 19, 25, 0.88);
+  color: var(--bunker);
 }
 
 .imageWrapper {
   border-radius: var(--border-radius-default);
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  z-index: -1;
+  border: 1px solid var(--wild-sand);
+  background-color: var(--wild-sand);
+  aspect-ratio: 16 / 9;
+  position: relative;
 }
 
 .image {
@@ -27,30 +20,38 @@
   height: 100%;
   object-fit: cover;
   border-radius: var(--border-radius-default);
-}
-
-.wrapper {
   position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  padding: var(--spacing-2);
+  object-position: top;
 }
 
 .title {
+  font-size: var(--font-size-small);
   margin-top: auto;
-  font-weight: bold;
-  margin-bottom: var(--spacing-1);
-  position: relative;
-  z-index: 1;
   letter-spacing: 0.4px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  background-color: rgba(0, 19, 25, 0.8);
+  padding: 0 var(--spacing-1);
+  border-radius: var(--border-radius-small);
+  line-height: 1.75;
+  position: absolute;
   color: var(--white);
+  left: 0.5rem;
+  bottom: 0.5rem;
+  z-index: 2;
+  max-width: calc(100% - 16px);
+    box-sizing: border-box;
+}
+
+.bottom {
+  display: flex;
+  align-items: center;
 }
 
 .category {
   display: flex;
   gap: var(--spacing-1);
-  margin-bottom: var(--spacing-1);
   z-index: 1;
 }
 
@@ -58,22 +59,15 @@
   padding: 0 var(--spacing-1);
   font-size: var(--font-size-minimum);
   border-radius: var(--border-radius-small);
-  background-color: rgba(0, 19, 25, 0.64);
-  color: var(--white);
+  background-color: var(--wild-sand);
   letter-spacing: 0.4px;
   height: 24px;
   line-height: 24px;
 }
 
 .date {
+  margin-left: auto;
   font-size: var(--font-size-minimum);
   z-index: 1;
   letter-spacing: 0.4px;
-  color: var(--white);
-}
-
-@media screen and (max-width: 767px) {
-  .card {
-    height: 200px;
-  }
 }

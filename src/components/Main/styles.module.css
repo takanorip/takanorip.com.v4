@@ -48,7 +48,7 @@
 .works {
   display: grid;
   gap: var(--spacing-2);
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
 }
 .buttonWrapper {
   width: 100%;
@@ -89,8 +89,6 @@
   .works {
     display: grid;
     gap: var(--spacing-2);
-    grid-template-columns: none;
-    grid-template-rows: 1fr 1fr 1fr;
   }
   .buttonWrapper {
     margin-top: var(--spacing-3);

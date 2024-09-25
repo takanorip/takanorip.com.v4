@@ -37,6 +37,7 @@
     width: 100%;
     height: auto;
     position: initial;
+    gap: var(--spacing-3);
   }
   .snsList {
     padding: var(--spacing-2);
