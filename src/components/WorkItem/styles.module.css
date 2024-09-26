@@ -41,7 +41,7 @@
   bottom: 0.5rem;
   z-index: 2;
   max-width: calc(100% - 16px);
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 .bottom {

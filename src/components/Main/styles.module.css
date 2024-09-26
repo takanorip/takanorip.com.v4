@@ -84,7 +84,12 @@
     font-size: var(--font-size-default);
   }
   .title {
+    font-size: var(--font-size-large);
     margin-bottom: var(--spacing-3);
+  }
+  .title::before {
+    width: 12px;
+    height: 12px;
   }
   .works {
     display: grid;

@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from "react";
+import "@oddbird/popover-polyfill";
 import styles from "./styles.module.css";
 import ExternalLink from "../Svg/ExternalLink";
 import cx from "classnames";
@@ -8,28 +8,6 @@ type HeaderProps = {
 };
 
 const Header = ({ dir }: HeaderProps) => {
-  const useOnClickOutside = (ref, handler) => {
-    useEffect(() => {
-      const listener = (e) => {
-        if (!ref.current || ref.current.contains(event.target)) return;
-        handler(e);
-      };
-      document.addEventListener("mousedown", listener);
-      document.addEventListener("touchstart", listener);
-      return () => {
-        document.removeEventListener("mousedown", listener);
-        document.removeEventListener("touchstart", listener);
-      };
-    }, [ref, handler]);
-  };
-
-  const [open, setOpen] = useState(false);
-  const toggle = () => setOpen(!open);
-  const close = () => setOpen(false);
-
-  const menu = useRef(null);
-  useOnClickOutside(menu, () => setOpen(false));
-
   return (
     <header className={styles.header}>
       <div className={styles.wrapper}>
@@ -66,7 +44,7 @@ const Header = ({ dir }: HeaderProps) => {
           <button
             className={styles.button}
             role="button"
-            onClick={() => toggle()}
+            popovertarget="sp-menu"
           >
             {dir}
             <svg
@@ -85,7 +63,7 @@ const Header = ({ dir }: HeaderProps) => {
               />
             </svg>
           </button>
-          <nav ref={menu} className={cx(styles.menu, { [styles.open]: open })}>
+          <nav className={styles.menu} popover="auto" id="sp-menu">
             <a
               className={cx(styles.menuItem, {
                 [styles.current]: dir === "about",

@@ -54,7 +54,7 @@ const Main: FC<Props> = ({ works }) => {
         <h2 className={styles.title}>Featured works</h2>
         <div className={styles.works}>
           {featuredWorks.map((item) => (
-            <WorkItem item={item} />
+            <WorkItem key={item.title} item={item} />
           ))}
         </div>
         <div className={styles.buttonWrapper}>

@@ -55,7 +55,7 @@ const Works = ({ works }) => {
       </div>
       <div className={cx(styles.grid, { [styles.animate]: animate })}>
         {filteredWorks.map((item) => (
-          <WorkItem key={item.id} item={item} />
+          <WorkItem key={item.title} item={item} />
         ))}
       </div>
     </div>

@@ -23,7 +23,9 @@ const WorkItem: FC<Props> = ({ item, className }) => {
       <div className={styles.bottom}>
         <div className={styles.category}>
           {item.category.map((c) => (
-            <div className={styles.tag}>{c}</div>
+            <div key={c} className={styles.tag}>
+              {c}
+            </div>
           ))}
         </div>
         <p className={styles.date}>
