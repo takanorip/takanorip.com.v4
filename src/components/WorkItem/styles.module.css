@@ -46,11 +46,12 @@
 
 .bottom {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
 }
 
 .category {
   display: flex;
+  flex-wrap: wrap;
   gap: var(--spacing-1);
   z-index: 1;
 }
@@ -70,4 +71,6 @@
   font-size: var(--font-size-minimum);
   z-index: 1;
   letter-spacing: 0.4px;
+  flex: none;
+  line-height: 1.5rem;
 }
