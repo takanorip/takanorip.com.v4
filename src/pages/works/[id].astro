@@ -2,6 +2,7 @@
 import MainHead from "../../components/MainHead.astro";
 import Header from "../../components/Header/index";
 import Work from "../../components/Work/index";
+import { parse } from "node-html-parser";
 
 export const getStaticPaths = async () => {
   const apiUrl = `https://takanorip.microcms.io/api/v1/works?limit=1000`;
@@ -10,16 +11,39 @@ export const getStaticPaths = async () => {
   };
 
   const response = await fetch(apiUrl, baseHeaders);
-  const data = await response.json();
-  return data.contents.map((item) => {
-    return {
-      params: { id: item.id },
-      props: { item },
-    };
-  });
+  const resJson = await response.json();
+  const data = await Promise.all(
+    resJson.contents.map(async (item) => {
+      const isSpeakerDeck = item.link?.includes("speakerdeck.com");
+      if (!isSpeakerDeck) {
+        return {
+          params: { id: item.id },
+          props: { item, spekerdeckInfo: null },
+        };
+      }
+      const spealerdeckEmbedRes = await (
+        await fetch(`https://speakerdeck.com/oembed.json?url=${item.link}`)
+      ).json();
+      const iframeUrl = parse(spealerdeckEmbedRes.html)
+        .querySelector("iframe")
+        .getAttribute("src");
+
+      return {
+        params: { id: item.id },
+        props: {
+          item,
+          spekerdeckInfo: {
+            title: spealerdeckEmbedRes.title,
+            link: iframeUrl,
+          },
+        },
+      };
+    }),
+  );
+  return data;
 };
 
-const { item } = Astro.props;
+const { item, spekerdeckInfo } = Astro.props;
 
 const strippedDescription = item.description.replace(/(<([^>]+)>)/gi, "");
 ---
@@ -33,6 +57,6 @@ const strippedDescription = item.description.replace(/(<([^>]+)>)/gi, "");
   </head>
   <body>
     <Header dir="works" client:visible />
-    <Work data={item} />
+    <Work data={item} spekerdeckInfo={spekerdeckInfo} />
   </body>
 </html>

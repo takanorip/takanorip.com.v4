@@ -41,12 +41,12 @@
 }
 
 .infoCategoryItem {
-  height: 24px;
   padding: 0 var(--spacing-1);
-  font-size: var(--font-size-minimum);
-  line-height: 24px;
+  font-size: var(--font-size-small);
+  line-height: 28px;
+  color: var(--white);
   letter-spacing: 0.4px;
-  background-color: var(--wild-sand);
+  background-color: var(--bunker);
   border-radius: var(--border-radius-small);
 }
 
@@ -100,10 +100,14 @@
   overflow-wrap: anywhere;
 }
 
+.iframeWrapper {
+  width: 100%;
+}
+
 @media screen and (width <= 767px) {
   .wrapper {
     gap: var(--spacing-5);
-    padding: calc(48px + 40px) var(--spacing-2) var(--spacing-13);
+    padding: 48px var(--spacing-2) var(--spacing-13);
   }
 
   .button {
@@ -121,7 +125,7 @@
   }
 
   .title {
-    font-size: var(--font-size-h3);
+    font-size: var(--font-size-large);
   }
 
   .titleWrapper {
@@ -134,6 +138,9 @@
   }
 
   .figure {
-    padding: 0;
+    width: calc(100% + 2rem);
+    padding: var(--spacing-2);
+    margin: 0 -1rem;
+    border-radius: 0;
   }
 }

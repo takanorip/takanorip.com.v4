@@ -52,6 +52,17 @@ body {
   color: var(--bunker);
 }
 
+iframe.speakerdeck-iframe {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 560 / 315;
+  padding: 0;
+  margin: 0;
+  background: padding-box padding-box rgb(0 0 0 / 10%);
+  border: 0;
+  border-radius: 6px;
+}
+
 header,
 h1,
 h2,

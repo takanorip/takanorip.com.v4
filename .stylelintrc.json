@@ -7,7 +7,5 @@
   "rules": {
     "selector-class-pattern": null
   },
-  "plugins": [
-    "stylelint-order"
-  ]
+  "plugins": ["stylelint-order"]
 }
