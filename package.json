@@ -6,10 +6,17 @@
     "dev": "astro dev",
     "start": "astro dev",
     "build": "astro build",
-    "preview": "astro preview"
+    "preview": "astro preview",
+    "lint:css": "stylelint \"src/**/*.css\"",
+    "fix:css": "stylelint --fix \"src/**/*.css\""
   },
   "devDependencies": {
-    "@types/react": "^18.3.9"
+    "@types/react": "^18.3.9",
+    "stylelint": "^16.9.0",
+    "stylelint-config-css-modules": "^4.4.0",
+    "stylelint-config-recess-order": "^5.1.1",
+    "stylelint-config-standard": "^36.0.1",
+    "stylelint-order": "^6.0.4"
   },
   "dependencies": {
     "@astrojs/react": "^3.6.2",

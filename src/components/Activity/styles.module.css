@@ -6,8 +6,8 @@
 
 .item {
   padding: var(--spacing-2);
-  border-radius: var(--border-radius-default);
   border: 1px solid var(--alto);
+  border-radius: var(--border-radius-default);
   transition: background-color 0.3s var(--ease-out-cubic);
 }
 
@@ -16,8 +16,8 @@
 }
 
 .category {
-  color: var(--scarpa-flow);
   font-size: var(--font-size-small);
+  color: var(--scarpa-flow);
 }
 
 .item:hover {

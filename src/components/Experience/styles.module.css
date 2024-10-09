@@ -1,30 +1,30 @@
 .wrapper {
+  position: relative;
   display: flex;
   flex-direction: column;
   gap: var(--spacing-5);
   padding: var(--spacing-3);
-  border-radius: var(--border-radius-default);
   border: 1px solid var(--alto);
-  position: relative;
+  border-radius: var(--border-radius-default);
 }
 
 .wrapper::before {
-  content: "";
-  display: block;
-  width: 2px;
-  background-color: var(--alto);
   position: absolute;
   top: 52px;
   bottom: 52px;
   left: 119px;
+  display: block;
+  width: 2px;
+  content: "";
+  background-color: var(--alto);
 }
 
 .item {
+  position: relative;
   display: grid;
   grid-template-columns: 66px 8px 1fr;
-  align-items: center;
   gap: var(--spacing-3);
-  position: relative;
+  align-items: center;
 }
 
 .period {
@@ -34,15 +34,15 @@
 }
 
 .hyphen {
-  transform: rotate(90deg);
   line-height: 16px;
+  transform: rotate(90deg);
 }
 
 .dot {
   width: 12px;
   height: 12px;
-  border-radius: 6px;
   background-color: var(--alto);
+  border-radius: 6px;
 }
 
 .company {

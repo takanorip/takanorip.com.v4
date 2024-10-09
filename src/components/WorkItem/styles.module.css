@@ -1,47 +1,43 @@
 .card {
+  position: relative;
   display: flex;
   flex-direction: column;
   gap: var(--spacing-1);
-  position: relative;
-  transition: background-color 0.3s var(--ease-out-cubic);
   color: var(--bunker);
-}
-
-.imageWrapper {
-  border-radius: var(--border-radius-default);
-  border: 1px solid var(--wild-sand);
-  background-color: var(--wild-sand);
-  aspect-ratio: 16 / 9;
-  position: relative;
-}
-
-.image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: var(--border-radius-default);
-  position: absolute;
-  object-position: top;
+  transition: background-color 0.3s var(--ease-out-cubic);
 }
 
 .title {
-  font-size: var(--font-size-small);
-  margin-top: auto;
-  letter-spacing: 0.4px;
-  text-overflow: ellipsis;
-  overflow: hidden;
-  white-space: nowrap;
-  background-color: rgba(0, 19, 25, 0.8);
-  padding: 0 var(--spacing-1);
-  border-radius: var(--border-radius-small);
-  line-height: 1.75;
-  position: absolute;
-  color: var(--white);
-  left: 0.5rem;
-  bottom: 0.5rem;
-  z-index: 2;
-  max-width: calc(100% - 16px);
   box-sizing: border-box;
+  margin-top: auto;
+  overflow: hidden;
+  font-size: var(--font-size-small);
+  font-weight: 500;
+  line-height: 1.75;
+  text-overflow: ellipsis;
+  letter-spacing: 0.4px;
+  white-space: nowrap;
+}
+
+.card:hover {
+  .title {
+    color: var(--science-blue);
+  }
+}
+
+.imageWrapper {
+  position: relative;
+  aspect-ratio: 16 / 9;
+}
+
+.image {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+  border: 1px solid var(--wild-sand);
+  border-radius: var(--border-radius-default);
 }
 
 .bottom {
@@ -50,27 +46,27 @@
 }
 
 .category {
+  z-index: 1;
   display: flex;
   flex-wrap: wrap;
   gap: var(--spacing-1);
-  z-index: 1;
 }
 
 .tag {
+  height: 24px;
   padding: 0 var(--spacing-1);
   font-size: var(--font-size-minimum);
-  border-radius: var(--border-radius-small);
-  background-color: var(--wild-sand);
-  letter-spacing: 0.4px;
-  height: 24px;
   line-height: 24px;
+  letter-spacing: 0.4px;
+  background-color: var(--wild-sand);
+  border-radius: var(--border-radius-small);
 }
 
 .date {
+  z-index: 1;
+  flex: none;
   margin-left: auto;
   font-size: var(--font-size-minimum);
-  z-index: 1;
-  letter-spacing: 0.4px;
-  flex: none;
   line-height: 1.5rem;
+  letter-spacing: 0.4px;
 }

@@ -18,8 +18,8 @@ const WorkItem: FC<Props> = ({ item, className }) => {
           src={item.image.url}
           alt={item.title}
         />
-        <figcaption className={styles.title}>{item.title}</figcaption>
       </figure>
+      <p className={styles.title}>{item.title}</p>
       <div className={styles.bottom}>
         <div className={styles.category}>
           {item.category.map((c) => (

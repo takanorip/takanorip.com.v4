@@ -3,105 +3,124 @@
   flex-direction: column;
   gap: var(--spacing-13);
 }
+
 .section {
   max-width: 720px;
 }
+
 .keyText {
   font-size: var(--font-size-h1);
   font-weight: 700;
   line-height: 1.2;
   letter-spacing: 0.4px;
 }
+
 .subText {
   margin-top: var(--spacing-2);
-  color: var(--scarpa-flow);
   font-size: var(--font-size-large);
+  color: var(--scarpa-flow);
 }
+
 .title {
   display: flex;
-  align-items: center;
   gap: var(--spacing-1);
+  align-items: center;
+  margin-bottom: var(--spacing-5);
   font-size: var(--font-size-h3);
   font-weight: 700;
-  letter-spacing: 0.8px;
-  margin-bottom: var(--spacing-5);
   line-height: 1;
+  letter-spacing: 0.8px;
 }
+
 .title::before {
   display: block;
-  content: "";
   width: 20px;
   height: 12px;
-  border-radius: 6px;
+  content: "";
   background-color: var(--supernova);
+  border-radius: 6px;
 }
+
 .text {
   display: flex;
   flex-direction: column;
   gap: 1.5em;
-  line-height: 1.5;
   font-size: var(--font-size-bold);
+  line-height: 1.5;
 }
+
 .blue {
   color: var(--science-blue);
 }
+
 .works {
   display: grid;
-  gap: var(--spacing-2);
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: var(--spacing-2);
 }
+
 .buttonWrapper {
-  width: 100%;
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
+  width: 100%;
   margin-top: var(--spacing-5);
 }
+
 .subGrid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: var(--spacing-3);
 }
+
 .aside {
   display: none;
 }
 
-@media screen and (max-width: 1008px) {
+@media screen and (width <= 1008px) {
   .aside {
     display: block;
     margin-bottom: var(--spacing-3);
   }
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (width <= 767px) {
   .main {
     gap: var(--spacing-8);
   }
+
   .keyText {
     font-size: 10.6vw;
   }
+
   .subText {
     font-size: var(--font-size-default);
   }
+
   .title {
-    font-size: var(--font-size-large);
     margin-bottom: var(--spacing-3);
+    font-size: var(--font-size-large);
   }
+
   .title::before {
     width: 12px;
     height: 12px;
   }
+
   .works {
     display: grid;
     gap: var(--spacing-2);
   }
+
   .buttonWrapper {
     margin-top: var(--spacing-3);
   }
+
   a.button {
-    width: 100%;
     justify-content: center;
+    width: 100%;
   }
+
   .subGrid {
     display: flex;
     flex-direction: column;

@@ -1,9 +1,10 @@
 .works {
   width: 100%;
   min-height: calc(100% - 48px);
-  margin: 0 auto;
   padding: calc(96px + 40px) var(--spacing-2) var(--spacing-13);
+  margin: 0 auto;
 }
+
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
@@ -11,65 +12,75 @@
   opacity: 0;
   transform: translateY(12px);
 }
+
 @keyframes works {
   0% {
     opacity: 0;
     transform: translateY(12px);
   }
+
   100% {
     opacity: 1;
     transform: translateY(0);
   }
 }
+
 .animate {
-  animation-name: works;
-  animation-fill-mode: forwards;
-  opacity: 0;
-  animation-duration: 0.3s;
   position: relative;
+  opacity: 0;
+  animation-name: works;
+  animation-duration: 0.3s;
+  animation-fill-mode: forwards;
 }
+
 .tabOverflow {
-  overflow-x: scroll;
-  overflow-y: hidden;
   margin-bottom: var(--spacing-5);
+  overflow: scroll hidden;
 }
+
 .tabWrapper {
   display: flex;
   width: fit-content;
   margin: auto;
 }
+
 .tab {
+  height: 40px;
+  padding: 0 var(--spacing-2);
+  font-size: var(--font-size-small);
+  line-height: 40px;
+  cursor: pointer;
+  background: none;
   border: 1px solid var(--alto);
   border-left-width: 0;
-  background: none;
-  height: 40px;
-  line-height: 40px;
-  font-size: var(--font-size-small);
-  padding: 0 var(--spacing-2);
-  cursor: pointer;
   transition: background-color 0.3s var(--ease-out-cubic);
 }
+
 .tab:first-child {
   border-left-width: 1px;
   border-radius: var(--border-radius-small) 0 0 var(--border-radius-small);
 }
+
 .tab:last-child {
   border-radius: 0 var(--border-radius-small) var(--border-radius-small) 0;
 }
+
 .tab:hover {
   background-color: var(--solitude);
 }
+
 .tab.active {
   color: var(--white);
   background-color: var(--science-blue);
   border: none;
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (width <= 767px) {
   .works {
     padding: calc(48px + 40px) var(--spacing-2) var(--spacing-8);
     overflow: auto;
   }
+
   .grid {
     grid-template-columns: repeat(auto-fit, 100%);
   }

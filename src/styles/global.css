@@ -6,7 +6,7 @@
   --science-blue: #0064ca;
   --ottoman: #e6f4e8;
   --forest-green: #008d18;
-  --white: #ffffff;
+  --white: #fff;
   --wild-sand: #f4f5f6;
   --alto: #dde0e4;
   --scarpa-flow: #525960;
@@ -25,7 +25,7 @@
   --spacing-8: 4rem;
   --spacing-13: 6.5rem;
   --spacing-21: 10.5rem;
-  --font-family: "Rubik", "Hiragino Sans", sans-serif;
+  --font-family: "Murecho", "Hiragino Sans", sans-serif;
   --font-size-minimum: 12px;
   --font-size-small: 14px;
   --font-size-default: 16px;
@@ -43,12 +43,13 @@ html {
 }
 
 body {
-  color: var(--bunker);
-  font-family: var(--font-family);
-  margin: 0;
   box-sizing: border-box;
   height: 100%;
+  margin: 0;
+  font-family: var(--font-family);
+  font-optical-sizing: auto;
   line-height: 1.5;
+  color: var(--bunker);
 }
 
 header,
@@ -64,8 +65,8 @@ figure,
 dl,
 dd,
 button {
-  margin: 0;
   box-sizing: border-box;
+  margin: 0;
 }
 
 a {
@@ -73,7 +74,7 @@ a {
 }
 
 a:visited {
-  color: currentColor;
+  color: currentcolor;
 }
 
 button {

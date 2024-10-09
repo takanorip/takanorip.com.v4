@@ -1,15 +1,15 @@
 .button {
   display: flex;
-  align-items: center;
   gap: var(--spacing-05);
+  align-items: center;
   width: fit-content;
-  padding: 0 var(--spacing-2);
   height: 48px;
+  padding: 0 var(--spacing-2);
   line-height: 48px;
   color: var(--white);
   background-color: var(--science-blue);
-  border-radius: var(--border-radius-default);
   border: 1px solid var(--science-blue);
+  border-radius: var(--border-radius-default);
   transition:
     background-color 0.3s var(--ease-out-cubic),
     color 0.3s var(--ease-out-cubic);
@@ -20,6 +20,6 @@
 }
 
 .button:hover {
-  background-color: var(--white);
   color: var(--science-blue);
+  background-color: var(--white);
 }
