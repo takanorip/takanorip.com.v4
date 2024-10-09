@@ -22,23 +22,16 @@
 }
 
 .title {
-  display: flex;
-  gap: var(--spacing-1);
-  align-items: center;
   margin-bottom: var(--spacing-5);
   font-size: var(--font-size-h3);
   font-weight: 700;
   line-height: 1;
+  text-decoration: underline;
+  text-decoration-thickness: 10px;
+  text-decoration-color: var(--supernova);
+  text-underline-offset: -4px;
   letter-spacing: 0.8px;
-}
-
-.title::before {
-  display: block;
-  width: 20px;
-  height: 12px;
-  content: "";
-  background-color: var(--supernova);
-  border-radius: 6px;
+  text-decoration-skip-ink: none;
 }
 
 .text {
