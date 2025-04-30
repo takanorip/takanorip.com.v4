@@ -7,10 +7,16 @@ export type Experience = {
 
 export const experiences = [
   {
+    company: "Kanmu",
+    role: "Engineer/Designer",
+    start: "2025/04",
+    end: "",
+  },
+  {
     company: "Ubie",
     role: "Design Engineer",
     start: "2022/01",
-    end: "",
+    end: "2025/03",
   },
   {
     company: "ClassDo",
