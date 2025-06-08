@@ -157,6 +157,7 @@
     padding: var(--spacing-2);
     margin: 0 -1rem;
     border-radius: 0;
+    aspect-ratio: unset;
   }
 
   .description {
