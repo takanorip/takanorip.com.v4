@@ -52,10 +52,12 @@ const Main: FC<Props> = ({ works }) => {
       </section>
       <section className={styles.section}>
         <h2 className={styles.title}>Featured works</h2>
-        <div className={styles.works}>
-          {featuredWorks.map((item) => (
-            <WorkItem key={item.title} item={item} />
-          ))}
+        <div className={styles.worksWrapper}>
+          <div className={styles.works}>
+            {featuredWorks.map((item) => (
+              <WorkItem key={item.title} item={item} />
+            ))}
+          </div>
         </div>
         <div className={styles.buttonWrapper}>
           <Button className={styles.button} to="/works" icon={<ArrowRight />}>

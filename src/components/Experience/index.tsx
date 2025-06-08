@@ -5,7 +5,7 @@ const Experience = () => {
   return (
     <div className={styles.wrapper}>
       {experiences.map((item) => (
-        <div className={styles.item}>
+        <div key={item.company} className={styles.item}>
           <div className={styles.period}>
             <p className={styles.end}>{item.end || "Now"}</p>
             <p className={styles.hyphen}>-</p>

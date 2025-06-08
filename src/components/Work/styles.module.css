@@ -1,33 +1,36 @@
 .wrapper {
   display: flex;
   flex-direction: column;
-  gap: var(--spacing-5);
-  max-width: 800px;
+  gap: var(--spacing-8);
+  max-width: 1320px;
   min-height: calc(100% - 48px);
   padding: calc(96px + 64px) var(--spacing-5) var(--spacing-21);
   margin: 0 auto;
 }
 
 .title {
-  font-size: var(--font-size-h3);
+  font-size: var(--font-size-h2);
   font-weight: 700;
   line-height: 1.4;
+  width: 100%;
+  max-width: 800px;
 }
 
 .titleWrapper {
   display: flex;
   flex-direction: column;
-  gap: var(--spacing-5);
+  justify-content: flex-start;
+  gap: var(--spacing-3);
 }
 
 .info {
-  display: grid;
-  gap: var(--spacing-1);
+  display: flex;
+  gap: var(--spacing-5);
   width: 100%;
 }
 
 .infoTitle {
-  margin-bottom: var(--spacing-0);
+  display: block;
   font-size: var(--font-size-small);
   line-height: 20px;
   color: var(--scarpa-flow);
@@ -38,16 +41,11 @@
   flex-wrap: wrap;
   gap: var(--spacing-1);
   align-items: center;
+  height: fit-content;
 }
 
 .infoCategoryItem {
-  padding: 0 var(--spacing-1);
-  font-size: var(--font-size-small);
-  line-height: 28px;
-  color: var(--white);
   letter-spacing: 0.4px;
-  background-color: var(--bunker);
-  border-radius: var(--border-radius-small);
 }
 
 .infoDate {
@@ -56,6 +54,7 @@
 
 .button {
   flex: none;
+  margin-left: auto;
 }
 
 .figure {
@@ -63,8 +62,7 @@
   align-items: center;
   justify-content: center;
   width: 100%;
-  aspect-ratio: 4 / 4;
-  padding: var(--spacing-3);
+  aspect-ratio: 16 / 9;
   overflow: hidden;
   line-height: 0;
   object-fit: contain;
@@ -77,7 +75,6 @@
   max-width: 100%;
   max-height: 100%;
   object-fit: contain;
-  border-radius: var(--border-radius-default);
 }
 
 .descriptionWrapper {
@@ -89,10 +86,28 @@
 .description {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
-  font-size: var(--font-size-bold);
+  align-items: center;
   line-height: 1.5;
   letter-spacing: 0.4px;
+
+  img {
+    width: 100%;
+    box-shadow:
+      0px 0px 4px rgba(0, 0, 0, 0.04),
+      0px 8px 16px rgba(0, 0, 0, 0.08);
+    border-radius: 8px;
+  }
+
+  p:not(:has(img)) {
+    width: 720px;
+    max-width: 100%;
+  }
+
+  p:has(img) {
+    width: 100%;
+    line-height: 0;
+    margin: var(--spacing-5) 0;
+  }
 }
 
 .description a {
@@ -107,7 +122,7 @@
 @media screen and (width <= 767px) {
   .wrapper {
     gap: var(--spacing-5);
-    padding: 48px var(--spacing-2) var(--spacing-13);
+    padding: 80px var(--spacing-2) var(--spacing-13);
   }
 
   .button {
@@ -142,5 +157,12 @@
     padding: var(--spacing-2);
     margin: 0 -1rem;
     border-radius: 0;
+  }
+
+  .description {
+    p:has(img) {
+      width: 100%;
+      margin: 0;
+    }
   }
 }

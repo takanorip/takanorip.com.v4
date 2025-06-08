@@ -44,7 +44,7 @@ const Header = ({ dir }: HeaderProps) => {
           <button
             className={styles.button}
             role="button"
-            popovertarget="sp-menu"
+            popoverTarget="sp-menu"
           >
             {dir}
             <svg

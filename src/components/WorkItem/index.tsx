@@ -19,18 +19,21 @@ const WorkItem: FC<Props> = ({ item, className }) => {
           alt={item.title}
         />
       </figure>
-      <p className={styles.title}>{item.title}</p>
-      <div className={styles.bottom}>
-        <div className={styles.category}>
-          {item.category.map((c) => (
-            <div key={c} className={styles.tag}>
-              {c}
-            </div>
-          ))}
+      <div className={styles.titleWrapper}>
+        <p className={styles.title}>{item.title}</p>
+        <div className={styles.bottom}>
+          <p className={styles.date}>
+            {format(addHours(new Date(item.publishDate), 9), "MMM, yyyy")}
+          </p>
+          <div className={styles.category}>
+            {item.category.map((c, i) => (
+              <div key={c} className={styles.tag}>
+                #{c}
+                {i !== item.category.length - 1 && ", "}
+              </div>
+            ))}
+          </div>
         </div>
-        <p className={styles.date}>
-          {format(addHours(new Date(item.publishDate), 9), "MMM, yyyy")}
-        </p>
       </div>
     </a>
   );

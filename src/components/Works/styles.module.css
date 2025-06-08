@@ -7,8 +7,8 @@
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-  gap: var(--spacing-5) var(--spacing-2);
+  grid-template-columns: repeat(auto-fit, minmax(640px, 1fr));
+  gap: var(--spacing-8) var(--spacing-5);
   opacity: 0;
   transform: translateY(12px);
 }
@@ -83,5 +83,6 @@
 
   .grid {
     grid-template-columns: repeat(auto-fit, 100%);
+    gap: var(--spacing-5) var(--spacing-2);
   }
 }

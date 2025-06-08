@@ -46,7 +46,13 @@
   color: var(--science-blue);
 }
 
+.worksWrapper {
+  width: 100%;
+  overflow-x: scroll;
+}
+
 .works {
+  width: 250%;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: var(--spacing-2);
