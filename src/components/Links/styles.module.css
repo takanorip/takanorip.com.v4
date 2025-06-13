@@ -1,0 +1,24 @@
+.snsList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-3);
+}
+
+.snsLink {
+  display: flex;
+  gap: var(--spacing-1);
+  align-items: center;
+  width: fit-content;
+  color: var(--bunker);
+  text-decoration: underline;
+}
+
+.snsLink:hover {
+  color: var(--science-blue);
+}
+
+@media screen and (width <= 767px) {
+  .snsList {
+    gap: var(--spacing-1);
+  }
+}

@@ -9,7 +9,6 @@
   justify-content: space-between;
   padding: var(--spacing-1) var(--spacing-5);
   background-color: var(--white);
-  border-bottom: 1px solid var(--alto);
 }
 
 .logo {
@@ -43,8 +42,8 @@
 
 .navItem.active {
   text-decoration: underline;
-  text-decoration-color: var(--science-blue);
   text-decoration-thickness: 4px;
+  text-decoration-color: var(--science-blue);
   text-underline-offset: var(--spacing-1);
   pointer-events: none;
 }

@@ -1,55 +1,55 @@
+.wrapperWrapper {
+  width: 100%;
+  overflow-x: scroll;
+}
+
 .wrapper {
   position: relative;
   display: flex;
-  flex-direction: column;
-  gap: var(--spacing-5);
-  padding: var(--spacing-3);
-  border: 1px solid var(--alto);
-  border-radius: var(--border-radius-default);
+  gap: var(--spacing-8);
+  width: fit-content;
 }
 
 .wrapper::before {
   position: absolute;
-  top: 52px;
-  bottom: 52px;
-  left: 119px;
+  bottom: 4px;
+  left: 0;
   display: block;
-  width: 2px;
+  width: 100%;
+  height: 2px;
   content: "";
   background-color: var(--alto);
+  transform: translateY(-50%);
 }
 
 .item {
   position: relative;
-  display: grid;
-  grid-template-columns: 66px 8px 1fr;
-  gap: var(--spacing-3);
-  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-1);
+  align-items: flex-start;
 }
 
 .period {
   display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-}
-
-.hyphen {
-  line-height: 16px;
-  transform: rotate(90deg);
+  gap: var(--spacing-1);
 }
 
 .dot {
   width: 12px;
   height: 12px;
+  margin-top: var(--spacing-2);
   background-color: var(--alto);
   border-radius: 6px;
 }
 
 .company {
+  font-size: var(--font-size-bold);
   color: var(--science-blue);
 }
 
 .role {
   font-size: var(--font-size-small);
   color: var(--scarpa-flow);
+  white-space: nowrap;
 }

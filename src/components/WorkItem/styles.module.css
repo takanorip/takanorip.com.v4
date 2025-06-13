@@ -11,9 +11,9 @@
   box-sizing: border-box;
   margin-top: auto;
   overflow: hidden;
+  text-overflow: ellipsis;
   font-weight: bold;
   line-height: 1.5;
-  text-overflow: ellipsis;
   white-space: nowrap;
 }
 
@@ -32,8 +32,8 @@
 .imageWrapper {
   position: relative;
   aspect-ratio: 4 / 3;
-  background-color: var(--wild-sand);
   padding: var(--spacing-3);
+  background-color: var(--wild-sand);
 }
 
 .image {
@@ -57,8 +57,8 @@
 
 .bottom {
   display: flex;
-  align-items: flex-start;
   gap: var(--spacing-2);
+  align-items: flex-start;
 }
 
 .category {

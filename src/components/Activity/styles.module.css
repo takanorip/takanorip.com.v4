@@ -1,13 +1,14 @@
 .activity {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: var(--spacing-1);
 }
 
 .item {
+  width: 100%;
   padding: var(--spacing-2);
   border: 1px solid var(--alto);
-  border-radius: var(--border-radius-default);
+  border-radius: var(--border-radius-small);
   transition: background-color 0.3s var(--ease-out-cubic);
 }
 

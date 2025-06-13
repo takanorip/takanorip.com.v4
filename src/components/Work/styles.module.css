@@ -9,18 +9,18 @@
 }
 
 .title {
+  width: 100%;
+  max-width: 800px;
   font-size: var(--font-size-h2);
   font-weight: 700;
   line-height: 1.4;
-  width: 100%;
-  max-width: 800px;
 }
 
 .titleWrapper {
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
   gap: var(--spacing-3);
+  justify-content: flex-start;
 }
 
 .info {
@@ -92,10 +92,10 @@
 
   img {
     width: 100%;
-    box-shadow:
-      0px 0px 4px rgba(0, 0, 0, 0.04),
-      0px 8px 16px rgba(0, 0, 0, 0.08);
     border-radius: 8px;
+    box-shadow:
+      0 0 4px rgb(0 0 0 / 4%),
+      0 8px 16px rgb(0 0 0 / 8%);
   }
 
   p:not(:has(img)) {
@@ -105,8 +105,8 @@
 
   p:has(img) {
     width: 100%;
-    line-height: 0;
     margin: var(--spacing-5) 0;
+    line-height: 0;
   }
 }
 
@@ -154,10 +154,10 @@
 
   .figure {
     width: calc(100% + 2rem);
+    aspect-ratio: unset;
     padding: var(--spacing-2);
     margin: 0 -1rem;
     border-radius: 0;
-    aspect-ratio: unset;
   }
 
   .description {

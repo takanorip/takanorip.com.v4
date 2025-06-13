@@ -3,7 +3,7 @@ import Button from "../Button/index";
 import Experience from "../Experience/index";
 import Activity from "../Activity/index";
 import WorkItem from "../WorkItem/index";
-import Aside from "../Aside/index";
+import Links from "../Links/index";
 import ArrowRight from "../Svg/ArrowRight";
 import styles from "./styles.module.css";
 
@@ -16,48 +16,59 @@ const Main: FC<Props> = ({ works }) => {
 
   return (
     <main className={styles.main}>
-      <div>
-        <p className={styles.keyText}>
-          I'm <span className={styles.blue}>takanorip</span>.<br />
-          Design Engineer.
-        </p>
-        <p className={styles.subText}>
-          Systemizing the design and implementation of UI.
-        </p>
+      <div className={styles.mainArea}>
+        <div className={styles.cover} />
+        <div className={styles.mainContent}>
+          <p className={styles.keyText}>
+            I'm <span className={styles.blue}>takanorip</span>.<br />
+            Design Engineer.
+          </p>
+          <p className={styles.subText}>
+            Systemizing the design and implementation of UI.
+          </p>
+        </div>
       </div>
       <section className={styles.section}>
         <h2 className={styles.title}>About me</h2>
-        <div className={styles.aside}>
-          <Aside />
-        </div>
         <div className={styles.text}>
+          <figure className={styles.profile}>
+            <img
+              className={styles.image}
+              src="/assets/profile.webp"
+              alt="takanorip profile image"
+            />
+          </figure>
+          <div>
+            <h3>takanorip / 大木尊紀</h3>
+            <p>
+              デジタルプロダクトデザイナー
+              <br />
+              Webフロントエンドエンジニア
+            </p>
+          </div>
           <p>
-            I'm a digital design engineer living in Japan, I love Web and UI,
-            and I'm involved in UI from both design and development sides.
+            1991年7月生まれ。
+            <br />
+            WebフロントエンドエンジニアからUIデザイナーを経て、現在はデジタルプロダクトデザイナー兼フロントエンドエンジニアとしてスタートアップで働いています。
+            <br />
+            デザインと開発の狭間をつなぐ仕事が好きで、UIのデザイン・開発やデザインシステムの構築などが得意です。
+            <br />
+            最近はデザイン組織の構築やデザイナー採用にも取り組んでいます。
           </p>
           <p>
-            I'm interested in UI and web frontend in general. I'm particularly
-            interested in web fonts, web components, and Figma, and I've been
-            developing various tools and writing articles about them. Recently,
-            I'm also interested in technologies that connect design and
-            development, and I'm working on building and implementing design
-            systems.
+            カンファレンスやイベントへの登壇、記事の執筆も積極的に行っています。技術同人誌も何冊か執筆しています。
+            <br />
+            登壇実績はWorksをご覧ください。
           </p>
-          <p>
-            I am also actively involved in speaking at events and conferences,
-            and writing books. Please feel free to contact me for speaking
-            engagements, writing, or side projects.
-          </p>
+          <Links />
         </div>
       </section>
       <section className={styles.section}>
         <h2 className={styles.title}>Featured works</h2>
-        <div className={styles.worksWrapper}>
-          <div className={styles.works}>
-            {featuredWorks.map((item) => (
-              <WorkItem key={item.title} item={item} />
-            ))}
-          </div>
+        <div className={styles.works}>
+          {featuredWorks.map((item) => (
+            <WorkItem key={item.title} item={item} />
+          ))}
         </div>
         <div className={styles.buttonWrapper}>
           <Button className={styles.button} to="/works" icon={<ArrowRight />}>
@@ -65,16 +76,14 @@ const Main: FC<Props> = ({ works }) => {
           </Button>
         </div>
       </section>
-      <div className={styles.subGrid}>
-        <section className={styles.subSection}>
-          <h2 className={styles.title}>Activity</h2>
-          <Activity />
-        </section>
-        <section className={styles.subSection}>
-          <h2 className={styles.title}>Experience</h2>
-          <Experience />
-        </section>
-      </div>
+      <section className={styles.section}>
+        <h2 className={styles.title}>Experience</h2>
+        <Experience />
+      </section>
+      <section className={styles.section}>
+        <h2 className={styles.title}>Activity</h2>
+        <Activity />
+      </section>
     </main>
   );
 };

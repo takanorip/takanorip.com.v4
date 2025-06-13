@@ -3,7 +3,6 @@
 import MainHead from "../components/MainHead.astro";
 import Header from "../components/Header/index";
 import Main from "../components/Main/index";
-import Aside from "../components/Aside/index";
 import Footer from "../components/Footer/index";
 
 const apiUrl = "https://takanorip.microcms.io/api/v1/works?limit=1000";
@@ -23,11 +22,11 @@ const data = await response.json();
         display: flex;
         justify-content: center;
         gap: var(--spacing-5);
-        padding: 200px var(--spacing-3) var(--spacing-13);
+        padding: 64px 0 var(--spacing-13);
       }
       @media screen and (max-width: 1007px) {
         .about {
-          padding: 200px var(--spacing-2) var(--spacing-8);
+          padding: 64px 0 var(--spacing-8);
         }
         .aside {
           display: none;
@@ -35,7 +34,7 @@ const data = await response.json();
       }
       @media screen and (max-width: 767px) {
         .about {
-          padding: 88px var(--spacing-2) var(--spacing-8);
+          padding: 48px 0 var(--spacing-8);
         }
       }
     </style>
@@ -44,9 +43,6 @@ const data = await response.json();
     <Header dir="about" client:visible />
     <div class="about">
       <Main works={data.contents} />
-      <div class="aside">
-        <Aside />
-      </div>
     </div>
     <Footer />
   </body>
