@@ -88,7 +88,7 @@
   display: flex;
   flex-direction: column;
   gap: var(--spacing-5);
-  max-width: 720px;
+  max-width: 800px;
   line-height: 1.7;
 
   h3 {
