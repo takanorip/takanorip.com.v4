@@ -1,7 +1,7 @@
 .main {
   display: flex;
   flex-direction: column;
-  gap: var(--spacing-13);
+  gap: var(--spacing-21);
   align-items: center;
   width: 100%;
   overflow: hidden;
@@ -16,28 +16,29 @@
   /* background-color: var(--science-blue); */
   background: hsl(210deg 100% 40% / 100%);
   background: linear-gradient(
-    0deg,
+    90deg,
     hsl(210deg 100% 40% / 100%) 0%,
     hsl(194deg 100% 50% / 100%) 100%
   );
   background: linear-gradient(
-    0deg,
+    90deg,
     hsl(210deg 100% 40% / 100%) 0%,
     hsl(194deg 100% 50% / 100%) 100%
   );
   background: linear-gradient(
-    0deg,
+    90deg,
     hsl(210deg 100% 40% / 100%) 0%,
     hsl(194deg 100% 50% / 100%) 100%
   );
   border-radius: 40px;
+  border-radius: 0 380px 380px 0;
   filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#0064CA", endColorstr="#00C0FD", GradientType=1 );
 }
 
 .mainArea {
   display: flex;
   flex-direction: column;
-  gap: var(--spacing-5);
+  gap: var(--spacing-13);
   width: 100%;
   max-width: 1240px;
   padding: var(--spacing-3) var(--spacing-3) 0;
@@ -86,7 +87,7 @@
 .text {
   display: flex;
   flex-direction: column;
-  gap: var(--spacing-3);
+  gap: var(--spacing-5);
   max-width: 720px;
   line-height: 1.7;
 
@@ -113,7 +114,7 @@
 .works {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: var(--spacing-2);
+  gap: var(--spacing-3);
   width: 100%;
 }
 
@@ -127,17 +128,17 @@
 
 @media screen and (width <= 767px) {
   .main {
-    gap: var(--spacing-8);
+    gap: var(--spacing-13);
   }
 
   .mainArea {
-    padding: var(--spacing-2) var(--spacing-2) 0;
+    gap: var(--spacing-8);
+    padding: var(--spacing-3) var(--spacing-2) var(--spacing-3);
   }
 
   .cover {
     height: auto;
-    aspect-ratio: 16 / 9;
-    border-radius: 20px;
+    aspect-ratio: 16 / 8;
   }
 
   .section {
@@ -154,6 +155,7 @@
 
   .title {
     margin-bottom: var(--spacing-3);
+    font-size: var(--font-size-large);
   }
 
   .works {

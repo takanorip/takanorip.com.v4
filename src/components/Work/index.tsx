@@ -13,7 +13,7 @@ const Work: FC<Props> = ({ data, spekerdeckInfo }) => {
   return (
     <div className={styles.wrapper}>
       <div className={styles.titleWrapper}>
-        <h2 className={styles.title}>{data.title}</h2>
+        <h1 className={styles.title}>{data.title}</h1>
         <div className={styles.info}>
           <p className={styles.infoDate}>
             <span className={styles.infoTitle}>Date:</span>

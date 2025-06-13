@@ -62,18 +62,23 @@
   align-items: center;
   justify-content: center;
   width: 100%;
-  aspect-ratio: 16 / 9;
+  padding: var(--spacing-2);
   overflow: hidden;
   line-height: 0;
   object-fit: contain;
   object-position: center;
   background-color: var(--wild-sand);
-  border-radius: 12px;
+
+  &:has(iframe) {
+    padding: 0;
+    background-color: transparent;
+  }
 }
 
 .image {
-  max-width: 100%;
+  width: 100%;
   max-height: 100%;
+  aspect-ratio: 16 / 9;
   object-fit: contain;
 }
 
@@ -86,25 +91,19 @@
 .description {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  line-height: 1.5;
+  line-height: 1.7;
   letter-spacing: 0.4px;
 
   img {
     width: 100%;
-    border-radius: 8px;
-    box-shadow:
-      0 0 4px rgb(0 0 0 / 4%),
-      0 8px 16px rgb(0 0 0 / 8%);
   }
 
-  p:not(:has(img)) {
-    width: 720px;
+  p {
+    width: 800px;
     max-width: 100%;
   }
 
   p:has(img) {
-    width: 100%;
     margin: var(--spacing-5) 0;
     line-height: 0;
   }
@@ -140,7 +139,7 @@
   }
 
   .title {
-    font-size: var(--font-size-large);
+    font-size: var(--font-size-h3);
   }
 
   .titleWrapper {
@@ -154,10 +153,7 @@
 
   .figure {
     width: calc(100% + 2rem);
-    aspect-ratio: unset;
-    padding: var(--spacing-2);
     margin: 0 -1rem;
-    border-radius: 0;
   }
 
   .description {

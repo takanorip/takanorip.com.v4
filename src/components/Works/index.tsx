@@ -25,6 +25,7 @@ const Works = ({ works }) => {
 
   return (
     <div className={styles.works}>
+      <h1 className={styles.title}>Works</h1>
       <div className={styles.tabOverflow}>
         <div className={styles.tabWrapper}>
           <button

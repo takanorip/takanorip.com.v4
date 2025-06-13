@@ -36,7 +36,6 @@
   line-height: 48px;
   color: var(--bunker);
   letter-spacing: 0.8px;
-  border-radius: var(--border-radius-default);
   transition: background-color 0.3s var(--ease-out-cubic);
 }
 
@@ -81,18 +80,13 @@
   padding: var(--spacing-0);
   background-color: var(--white);
   border: 1px solid var(--alto);
-  border-radius: var(--border-radius-default);
-  box-shadow:
-    0 2px 4px rgb(0 19 25 / 6%),
-    0 6px 12px rgb(0 19 25 / 8%),
-    0 12px 20px rgb(0 19 25 / 6%);
 }
 
 :popover-open {
   position: fixed;
   inset: unset;
   top: 48px;
-  left: 50%;
+  right: 16px;
 }
 
 .menu.open {
@@ -104,22 +98,9 @@ a.menuItem {
   display: flex;
   justify-content: space-between;
   height: 40px;
-  padding: 0 var(--spacing-1) 0 36px;
+  padding: 0 var(--spacing-1) 0 var(--spacing-1);
   line-height: 40px;
   color: var(--bunker);
-}
-
-a.menuItem.current::before {
-  position: absolute;
-  top: 10px;
-  left: 8px;
-  display: block;
-  width: 20px;
-  height: 20px;
-  content: "";
-  background-image: url("/assets/check.svg");
-  background-repeat: no-repeat;
-  background-size: contain;
 }
 
 .button {
@@ -129,9 +110,8 @@ a.menuItem.current::before {
   height: 48px;
   padding: 0;
   font-size: var(--font-size-default);
-  font-weight: bold;
+  font-weight: normal;
   line-height: 48px;
-  color: var(--science-blue);
   letter-spacing: 0.4px;
   background-color: transparent;
   border: none;
@@ -162,5 +142,13 @@ a.menuItem.current::before {
 
   .spOnly {
     display: block;
+  }
+
+  .wrapper {
+    width: 100%;
+  }
+
+  .menuWrapper {
+    margin-left: auto;
   }
 }

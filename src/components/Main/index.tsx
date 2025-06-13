@@ -19,10 +19,10 @@ const Main: FC<Props> = ({ works }) => {
       <div className={styles.mainArea}>
         <div className={styles.cover} />
         <div className={styles.mainContent}>
-          <p className={styles.keyText}>
+          <h1 className={styles.keyText}>
             I'm <span className={styles.blue}>takanorip</span>.<br />
             Design Engineer.
-          </p>
+          </h1>
           <p className={styles.subText}>
             Systemizing the design and implementation of UI.
           </p>
@@ -56,7 +56,7 @@ const Main: FC<Props> = ({ works }) => {
             最近はデザイン組織の構築やデザイナー採用にも取り組んでいます。
           </p>
           <p>
-            カンファレンスやイベントへの登壇、記事の執筆も積極的に行っています。技術同人誌も何冊か執筆しています。
+            カンファレンスやイベントへの登壇、記事の執筆も積極的に行っています。技術同人誌の執筆もしています。
             <br />
             登壇実績はWorksをご覧ください。
           </p>

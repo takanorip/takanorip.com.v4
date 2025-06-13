@@ -9,7 +9,6 @@
   color: var(--white);
   background-color: var(--science-blue);
   border: 1px solid var(--science-blue);
-  border-radius: var(--border-radius-default);
   transition:
     background-color 0.3s var(--ease-out-cubic),
     color 0.3s var(--ease-out-cubic);
