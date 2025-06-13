@@ -41,7 +41,7 @@
   gap: var(--spacing-13);
   width: 100%;
   max-width: 1240px;
-  padding: var(--spacing-3) var(--spacing-3) 0;
+  padding: var(--spacing-13) var(--spacing-3) 0;
 }
 
 .mainContent {
