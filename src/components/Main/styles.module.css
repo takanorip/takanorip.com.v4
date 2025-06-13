@@ -40,7 +40,7 @@
   flex-direction: column;
   gap: var(--spacing-13);
   width: 100%;
-  max-width: 1240px;
+  max-width: 1288px;
   padding: var(--spacing-13) var(--spacing-3) 0;
 }
 
