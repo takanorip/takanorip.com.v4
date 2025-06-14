@@ -90,6 +90,7 @@
   gap: var(--spacing-5);
   max-width: 800px;
   line-height: 1.7;
+  text-align: justify;
 
   h3 {
     margin-bottom: var(--spacing-0);
@@ -133,7 +134,7 @@
 
   .mainArea {
     gap: var(--spacing-8);
-    padding: var(--spacing-3) var(--spacing-2) var(--spacing-3);
+    padding: var(--spacing-8) var(--spacing-2) 0;
   }
 
   .cover {
@@ -154,7 +155,6 @@
   }
 
   .title {
-    margin-bottom: var(--spacing-3);
     font-size: var(--font-size-large);
   }
 
