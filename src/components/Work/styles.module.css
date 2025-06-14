@@ -120,8 +120,8 @@
 
 .backToWorks {
   color: var(--science-blue);
-  text-decoration: underline;
   text-align: center;
+  text-decoration: underline;
 }
 
 @media screen and (width <= 767px) {

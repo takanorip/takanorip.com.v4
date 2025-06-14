@@ -32,10 +32,7 @@ const Work: FC<Props> = ({ data, spekerdeckInfo }) => {
           </div>
           {data.link && !spekerdeckInfo && (
             <div className={styles.button}>
-              <Button
-                className={styles.detailButton}
-                to={data.link}
-              >
+              <Button className={styles.detailButton} to={data.link}>
                 詳細を見る
               </Button>
             </div>

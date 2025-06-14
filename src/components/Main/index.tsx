@@ -1,4 +1,3 @@
-import type { FC } from "react";
 import Button from "../Button/index";
 import Experience from "../Experience/index";
 import Activity from "../Activity/index";
@@ -6,6 +5,7 @@ import WorkItem from "../WorkItem/index";
 import Links from "../Links/index";
 import ArrowRight from "../Svg/ArrowRight";
 import styles from "./styles.module.css";
+import { FC } from "react";
 
 type Props = {
   works: any;
@@ -30,7 +30,7 @@ const Main: FC<Props> = ({ works }) => {
       </div>
       <section className={styles.section}>
         <h2 className={styles.title}>About me</h2>
-        <div className={styles.text}>
+        <div className={styles.aboutMe}>
           <figure className={styles.profile}>
             <img
               className={styles.image}
@@ -38,30 +38,32 @@ const Main: FC<Props> = ({ works }) => {
               alt="takanorip profile image"
             />
           </figure>
-          <div>
-            <h3>takanorip / 大木尊紀</h3>
+          <div className={styles.text}>
+            <div>
+              <h3>takanorip / 大木尊紀</h3>
+              <p>
+                デジタルプロダクトデザイナー
+                <br />
+                ソフトウェアエンジニア
+              </p>
+            </div>
             <p>
-              デジタルプロダクトデザイナー
+              1991年生まれ。千葉県木更津市出身。
               <br />
-              ソフトウェアエンジニア
+              WebフロントエンドエンジニアからUIデザイナーを経て、現在はデジタルプロダクトデザイナー兼ソフトウェアエンジニアとして働いています。
+              デザインと開発の狭間をつなぐ仕事に興味があり、UIのデザイン・開発やデザインシステムの構築などが得意です。
+              最近はデザイン組織の構築やデザイナー採用にも取り組んでいます。
             </p>
+            <p>
+              カンファレンスやイベントへの登壇、ブログ記事や技術同人誌の執筆も積極的に行っています。
+              過去の登壇や執筆実績はWorksをご覧ください。
+            </p>
+            <p>
+              お仕事のご相談はXのDMにお願いします。
+              デザインシステムの構築支援、登壇、記事執筆、講師、イベント企画支援や司会など、お気軽にご相談ください。
+            </p>
+            <Links />
           </div>
-          <p>
-            1991年生まれ。千葉県木更津市出身。
-            <br />
-            WebフロントエンドエンジニアからUIデザイナーを経て、現在はデジタルプロダクトデザイナー兼ソフトウェアエンジニアとして働いています。
-            デザインと開発の狭間をつなぐ仕事に興味があり、UIのデザイン・開発やデザインシステムの構築などが得意です。
-            最近はデザイン組織の構築やデザイナー採用にも取り組んでいます。
-          </p>
-          <p>
-            カンファレンスやイベントへの登壇、ブログ記事や技術同人誌の執筆も積極的に行っています。
-            過去の登壇や執筆実績はWorksをご覧ください。
-          </p>
-          <p>
-            お仕事のご相談はXのDMにお願いします。
-            デザインシステムの構築支援、登壇、記事執筆、講師、イベント企画支援や司会など、お気軽にご相談ください。
-          </p>
-          <Links />
         </div>
       </section>
       <section className={styles.section}>
