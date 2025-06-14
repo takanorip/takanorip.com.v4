@@ -23,13 +23,12 @@ const WorkItem: FC<Props> = ({ item, className }) => {
         <p className={styles.title}>{item.title}</p>
         <div className={styles.bottom}>
           <p className={styles.date}>
-            {format(addHours(new Date(item.publishDate), 9), "MMM, yyyy")}
+            {format(addHours(new Date(item.publishDate), 9), "yyyy/MM")}
           </p>
           <div className={styles.category}>
             {item.category.map((c, i) => (
               <div key={c} className={styles.tag}>
                 #{c}
-                {i !== item.category.length - 1 && ", "}
               </div>
             ))}
           </div>

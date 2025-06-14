@@ -1,23 +1,24 @@
 .works {
   display: flex;
   flex-direction: column;
-  gap: var(--spacing-5);
+  gap: var(--spacing-8);
   width: 100%;
-  max-width: 1272px;
+  max-width: 1360px;
   min-height: calc(100% - 48px);
-  padding: calc(96px + 40px) var(--spacing-2) var(--spacing-13);
+  padding: calc(96px + 64px) var(--spacing-5) var(--spacing-13);
   margin: 0 auto;
 }
 
 .title {
   font-size: var(--font-size-h2);
   font-weight: bold;
+  line-height: 1.4;
   letter-spacing: 0.05em;
 }
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
   gap: var(--spacing-8) var(--spacing-3);
   opacity: 0;
   transform: translateY(12px);
@@ -77,6 +78,7 @@
 
 @media screen and (width <= 767px) {
   .works {
+    gap: var(--spacing-5);
     padding: calc(48px + 40px) var(--spacing-2) var(--spacing-8);
     overflow: auto;
   }

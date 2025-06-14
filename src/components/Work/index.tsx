@@ -30,14 +30,13 @@ const Work: FC<Props> = ({ data, spekerdeckInfo }) => {
               ))}
             </div>
           </div>
-          {data.link && (
+          {data.link && !spekerdeckInfo && (
             <div className={styles.button}>
               <Button
                 className={styles.detailButton}
                 to={data.link}
-                icon={<ExternalLink />}
               >
-                View details
+                詳細を見る
               </Button>
             </div>
           )}
@@ -61,6 +60,9 @@ const Work: FC<Props> = ({ data, spekerdeckInfo }) => {
           dangerouslySetInnerHTML={{ __html: data.description }}
         ></div>
       </div>
+      <a href="/works" className={styles.backToWorks}>
+        一覧へ戻る
+      </a>
     </div>
   );
 };

@@ -84,10 +84,6 @@ a {
   text-decoration: none;
 }
 
-a:visited {
-  color: currentcolor;
-}
-
 button {
   font-family: var(--font-family);
   appearance: none;

@@ -30,22 +30,16 @@
 
 .imageWrapper {
   position: relative;
-  padding: var(--spacing-2);
   line-height: 0;
   background-color: var(--wild-sand);
+  border: 1px solid var(--wild-sand);
 }
 
 .image {
   width: 100%;
-  aspect-ratio: 4 / 4;
+  aspect-ratio: 16 / 9;
   object-fit: contain;
   object-position: center;
-}
-
-@media screen and (width <= 767px) {
-  .imageWrapper {
-    padding: var(--spacing-2);
-  }
 }
 
 .bottom {
@@ -70,5 +64,4 @@
   z-index: 1;
   flex: none;
   font-size: var(--font-size-small);
-  letter-spacing: 0.4px;
 }

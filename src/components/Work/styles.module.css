@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: column;
   gap: var(--spacing-8);
-  max-width: 1320px;
+  max-width: 1360px;
   min-height: calc(100% - 48px);
   padding: calc(96px + 64px) var(--spacing-5) var(--spacing-21);
   margin: 0 auto;
@@ -62,15 +62,14 @@
   align-items: center;
   justify-content: center;
   width: 100%;
-  padding: var(--spacing-2);
   overflow: hidden;
   line-height: 0;
   object-fit: contain;
   object-position: center;
   background-color: var(--wild-sand);
+  border: 1px solid var(--wild-sand);
 
   &:has(iframe) {
-    padding: 0;
     background-color: transparent;
   }
 }
@@ -91,8 +90,8 @@
 .description {
   display: flex;
   flex-direction: column;
+  align-items: center;
   line-height: 1.7;
-  letter-spacing: 0.4px;
 
   img {
     width: 100%;
@@ -106,6 +105,7 @@
   p:has(img) {
     margin: var(--spacing-5) 0;
     line-height: 0;
+    border: 1px solid var(--wild-sand);
   }
 }
 
@@ -118,10 +118,16 @@
   width: 100%;
 }
 
+.backToWorks {
+  color: var(--science-blue);
+  text-decoration: underline;
+  text-align: center;
+}
+
 @media screen and (width <= 767px) {
   .wrapper {
     gap: var(--spacing-5);
-    padding: 80px var(--spacing-2) var(--spacing-13);
+    padding: calc(48px + 40px) var(--spacing-2) var(--spacing-13);
   }
 
   .button {
