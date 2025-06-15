@@ -12,9 +12,9 @@ const Experience = () => {
               <p className={styles.role}>{item.role}</p>
             </div>
             <div className={styles.period}>
-              <p className={styles.end}>{item.end || "Now"}</p>
-              <p className={styles.hyphen}>-</p>
               <p className={styles.start}>{item.start}</p>
+              <p className={styles.hyphen}>-</p>
+              <p className={styles.end}>{item.end || "Now"}</p>
             </div>
             <div className={styles.dot} />
           </div>

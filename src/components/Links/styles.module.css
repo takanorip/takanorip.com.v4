@@ -1,7 +1,7 @@
 .snsList {
   display: flex;
   flex-wrap: wrap;
-  gap: var(--spacing-3);
+  gap: var(--spacing-2);
 }
 
 .snsLink {

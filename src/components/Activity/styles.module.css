@@ -1,17 +1,32 @@
 .activity {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: var(--spacing-1);
+  display: flex;
+  flex-direction: column;
 }
 
 .item {
+  display: flex;
+  gap: var(--spacing-3);
+  align-items: center;
+  justify-content: space-between;
   width: 100%;
-  padding: var(--spacing-2);
-  border: 1px solid var(--alto);
+  padding: var(--spacing-3);
+  border-top: 1px solid var(--alto);
   transition: background-color 0.3s var(--ease-out-cubic);
+
+  &:last-child {
+    border-bottom: 1px solid var(--alto);
+  }
+}
+
+@media screen and (width <= 767px) {
+  .item {
+    gap: var(--spacing-2);
+    padding: var(--spacing-2) 0;
+  }
 }
 
 .title {
+  font-size: var(--font-size-small);
   color: var(--science-blue);
 }
 

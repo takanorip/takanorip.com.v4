@@ -67,6 +67,10 @@ const Main: FC<Props> = ({ works }) => {
         </div>
       </section>
       <section className={styles.section}>
+        <h2 className={styles.title}>Activity</h2>
+        <Activity />
+      </section>
+      <section className={styles.section}>
         <h2 className={styles.title}>Featured works</h2>
         <div className={styles.works}>
           {featuredWorks.map((item) => (
@@ -82,10 +86,6 @@ const Main: FC<Props> = ({ works }) => {
       <section className={styles.section}>
         <h2 className={styles.title}>Experience</h2>
         <Experience />
-      </section>
-      <section className={styles.section}>
-        <h2 className={styles.title}>Activity</h2>
-        <Activity />
       </section>
     </main>
   );

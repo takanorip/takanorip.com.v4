@@ -53,3 +53,31 @@
   color: var(--scarpa-flow);
   white-space: nowrap;
 }
+
+@media screen and (width <= 767px) {
+  .wrapperWrapper {
+    overflow: hidden;
+  }
+
+  .wrapper {
+    flex-direction: column;
+    gap: var(--spacing-3);
+
+    &::before {
+      content: none;
+    }
+  }
+
+  .item {
+    gap: var(--spacing-0);
+  }
+
+  .period {
+    gap: var(--spacing-0);
+    font-size: var(--font-size-small);
+  }
+
+  .dot {
+    display: none;
+  }
+}
