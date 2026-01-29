@@ -60,9 +60,10 @@
 }
 
 .image {
-  width: 240px;
-  height: 240px;
+  width: 100%;
+  aspect-ratio: 2 / 1;
   object-fit: cover;
+  object-position: bottom;
 }
 
 .subText {
@@ -79,16 +80,11 @@
   letter-spacing: 0.8px;
 }
 
-.aboutMe {
-  display: flex;
-  gap: var(--spacing-8);
-}
-
 .text {
   display: flex;
   flex-direction: column;
-  gap: var(--spacing-5);
-  max-width: 800px;
+  gap: var(--spacing-3);
+  max-width: 640px;
   line-height: 1.7;
   text-align: justify;
 

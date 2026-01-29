@@ -6,8 +6,8 @@ const Activity = () => {
     <div className={styles.activity}>
       {activities.map((item) => (
         <a key={item.title} className={styles.item} href={item.link}>
-          <p className={styles.title}>{item.title}</p>
-          <p className={styles.category}>{item.category}</p>
+          <h3 className={styles.title}>{item.title}</h3>
+          <p className={styles.description}>{item.description}</p>
         </a>
       ))}
     </div>

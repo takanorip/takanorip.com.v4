@@ -1,0 +1,77 @@
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-5);
+  width: 100%;
+}
+
+.serviceItem {
+  display: flex;
+  align-items: flex-start;
+}
+
+.serviceNumber {
+  flex-shrink: 0;
+  font-size: var(--font-size-h3);
+  font-weight: normal;
+  color: var(--bunker);
+  line-height: 1;
+}
+
+.serviceContent {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-1);
+  flex: 1;
+  max-width: 640px;
+}
+
+.serviceTitle {
+  margin: 0;
+  font-size: var(--font-size-large);
+  font-weight: normal;
+  line-height: 1.5;
+  letter-spacing: 0.4px;
+}
+
+.serviceDescription {
+  margin: 0;
+  line-height: 1.7;
+  color: var(--scarpa-flow);
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-2);
+  margin-top: var(--spacing-2);
+  max-width: 640px;
+}
+
+.sectionTitle {
+  margin: 0;
+  font-size: var(--font-size-bold);
+  font-weight: 700;
+  line-height: 1.5;
+  letter-spacing: 0.4px;
+}
+
+.contactNote {
+  margin: 0;
+  color: var(--scarpa-flow);
+  line-height: 1.7;
+}
+
+@media screen and (width <= 767px) {
+  .serviceItem {
+    flex-direction: column;
+  }
+
+  .serviceNumber {
+    font-size: var(--font-size-large);
+  }
+
+  .serviceContent {
+    max-width: 100%;
+  }
+}

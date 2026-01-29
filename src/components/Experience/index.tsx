@@ -3,23 +3,27 @@ import { experiences } from "./data";
 
 const Experience = () => {
   return (
-    <div className={styles.wrapperWrapper}>
-      <div className={styles.wrapper}>
-        {experiences.map((item) => (
-          <div key={item.company} className={styles.item}>
-            <div className={styles.detail}>
-              <p className={styles.company}>{item.company}</p>
-              <p className={styles.role}>{item.role}</p>
-            </div>
-            <div className={styles.period}>
-              <p className={styles.start}>{item.start}</p>
-              <p className={styles.hyphen}>-</p>
-              <p className={styles.end}>{item.end || "Now"}</p>
-            </div>
-            <div className={styles.dot} />
-          </div>
-        ))}
-      </div>
+    <div className={styles.wrapper}>
+      <table className={styles.table}>
+        <thead>
+          <tr>
+            <th className={styles.headerCompany}>会社名</th>
+            <th className={styles.headerRole}>役職</th>
+            <th className={styles.headerPeriod}>期間</th>
+          </tr>
+        </thead>
+        <tbody>
+          {experiences.map((item) => (
+            <tr key={item.company} className={styles.row}>
+              <td className={styles.company}>{item.company}</td>
+              <td className={styles.role}>{item.role}</td>
+              <td className={styles.period}>
+                {item.start} - {item.end || "Now"}
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
     </div>
   );
 };

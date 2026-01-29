@@ -2,32 +2,26 @@ export type Activity = {
   title: string;
   category: string;
   link: string;
+  description: string;
 };
 
 export const activities = [
   {
     title: "お元気ですか.fm",
-    category: "podcast",
     link: "https://creators.spotify.com/pod/profile/ogenkidesuka-fm/",
+    description:
+      "yamanokuと2人でお届けする近況報告系ポッドキャストです。たまにデザインや開発の話もします。",
   },
   {
     title: "TechTrainメンター",
-    category: "mentor",
     link: "https://techtrain.dev/mentors/130",
+    description:
+      "メンターとしてフロントエンド開発やデザイン全般についての学習・キャリアサポートを行っています。",
   },
   {
-    title: "devchat.fm",
-    category: "podcast",
-    link: "https://anchor.fm/devchat-fm/episodes/27-UI-1-with-takanoripe-et762e/a-a3leebm",
-  },
-  {
-    title: "デザインシステム構築の第一歩",
-    category: "podcast",
-    link: "https://findy-code.io/events/3IouPyoxxjUpH",
-  },
-  {
-    title: "Next Web Conf",
-    category: "conference",
-    link: "https://youtu.be/ftqAyw8gYNQ",
+    title: "MENTA",
+    link: "https://menta.work/plan/635?ref=mentor_profile",
+    description:
+      "デザインエンジニアを志す人に向けて、キャリアや学習のサポートを提供しています。",
   },
 ];

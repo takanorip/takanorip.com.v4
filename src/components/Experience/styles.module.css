@@ -1,83 +1,93 @@
-.wrapperWrapper {
-  width: 100%;
-  overflow-x: scroll;
-}
-
 .wrapper {
-  position: relative;
-  display: flex;
-  gap: var(--spacing-8);
-  width: fit-content;
-}
-
-.wrapper::before {
-  position: absolute;
-  bottom: 4px;
-  left: 0;
-  display: block;
   width: 100%;
-  height: 2px;
-  content: "";
-  background-color: var(--alto);
-  transform: translateY(-50%);
+  overflow-x: auto;
 }
 
-.item {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  gap: var(--spacing-1);
-  align-items: flex-start;
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
 }
 
-.period {
-  display: flex;
-  gap: var(--spacing-1);
+thead {
+  border-bottom: 1px solid var(--alto);
 }
 
-.dot {
-  width: 12px;
-  height: 12px;
-  margin-top: var(--spacing-2);
-  background-color: var(--alto);
-  border-radius: 6px;
+th {
+  padding: var(--spacing-2) 0;
+  font-size: var(--font-size-small);
+  font-weight: 700;
+  color: var(--scarpa-flow);
+  text-align: left;
+  letter-spacing: 0.4px;
+}
+
+.headerCompany {
+  width: 40%;
+}
+
+.headerRole {
+  width: 50%;
+}
+
+.headerPeriod {
+  width: 10%;
+}
+
+.row {
+  border-bottom: 1px solid var(--alto);
+  transition: background-color 0.3s var(--ease-out-cubic);
+}
+
+td {
+  padding: var(--spacing-3) 0;
+  vertical-align: top;
 }
 
 .company {
-  font-size: var(--font-size-bold);
-  color: var(--science-blue);
+  font-size: var(--font-size-default);
+  font-weight: normal;
+  color: var(--bunker);
+  line-height: 1.5;
 }
 
 .role {
-  font-size: var(--font-size-small);
+  font-size: var(--font-size-default);
   color: var(--scarpa-flow);
+  line-height: 1.5;
+}
+
+.period {
+  font-size: var(--font-size-default);
+  color: var(--scarpa-flow);
+  line-height: 1.5;
   white-space: nowrap;
 }
 
 @media screen and (width <= 767px) {
-  .wrapperWrapper {
-    overflow: hidden;
-  }
-
   .wrapper {
-    flex-direction: column;
-    gap: var(--spacing-3);
-
-    &::before {
-      content: none;
-    }
+    max-width: 100%;
   }
 
-  .item {
-    gap: var(--spacing-0);
-  }
-
-  .period {
-    gap: var(--spacing-0);
+  th,
+  td {
+    padding: var(--spacing-2) var(--spacing-1);
     font-size: var(--font-size-small);
   }
 
-  .dot {
-    display: none;
+  .headerCompany,
+  .headerRole,
+  .headerPeriod {
+    width: auto;
+  }
+
+  .company,
+  .role,
+  .period {
+    font-size: var(--font-size-small);
+  }
+
+  .period {
+    white-space: normal;
   }
 }
