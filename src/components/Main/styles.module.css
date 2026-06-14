@@ -11,28 +11,97 @@
   position: relative;
   width: 100%;
   height: 380px;
+  overflow: hidden;
   color: var(--science-blue);
-
-  /* background-color: var(--science-blue); */
-  background: hsl(210deg 100% 40% / 100%);
   background: linear-gradient(
-    90deg,
+    115deg,
     hsl(210deg 100% 40% / 100%) 0%,
+    hsl(203deg 100% 46% / 100%) 48%,
     hsl(194deg 100% 50% / 100%) 100%
   );
-  background: linear-gradient(
-    90deg,
-    hsl(210deg 100% 40% / 100%) 0%,
-    hsl(194deg 100% 50% / 100%) 100%
-  );
-  background: linear-gradient(
-    90deg,
-    hsl(210deg 100% 40% / 100%) 0%,
-    hsl(194deg 100% 50% / 100%) 100%
-  );
-  border-radius: 40px;
+  background-size: 180% 100%;
   border-radius: 0 380px 380px 0;
-  filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#0064CA", endColorstr="#00C0FD", GradientType=1 );
+  animation: coverGradientShift 18s var(--ease-in-out-cubic) infinite;
+  isolation: isolate;
+}
+
+.cover::before,
+.cover::after {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  content: "";
+}
+
+.cover::before {
+  z-index: 0;
+  background:
+    radial-gradient(
+      circle at 72% 38%,
+      hsl(47deg 100% 50% / 72%) 0 10px,
+      hsl(47deg 100% 50% / 0%) 11px
+    ),
+    radial-gradient(
+      circle at 84% 62%,
+      hsl(0deg 0% 100% / 58%) 0 5px,
+      hsl(0deg 0% 100% / 0%) 6px
+    ),
+    radial-gradient(
+      circle at 48% 70%,
+      hsl(0deg 0% 100% / 34%) 0 7px,
+      hsl(0deg 0% 100% / 0%) 8px
+    ),
+    linear-gradient(
+      135deg,
+      hsl(0deg 0% 100% / 0%) 0 30%,
+      hsl(0deg 0% 100% / 22%) 30% 31%,
+      hsl(0deg 0% 100% / 0%) 31% 48%,
+      hsl(0deg 0% 100% / 16%) 48% 49%,
+      hsl(0deg 0% 100% / 0%) 49% 100%
+    ),
+    radial-gradient(
+      circle at 82% 46%,
+      hsl(194deg 100% 80% / 46%) 0,
+      hsl(194deg 100% 80% / 0%) 24%
+    );
+  opacity: 0.9;
+  animation: coverSignalFloat 14s var(--ease-in-out-cubic) infinite;
+}
+
+.cover::after {
+  z-index: 1;
+  background:
+    linear-gradient(
+      90deg,
+      hsl(0deg 0% 100% / 0%) 0 66px,
+      hsl(0deg 0% 100% / 18%) 66px 67px,
+      hsl(0deg 0% 100% / 0%) 67px 88px
+    ),
+    linear-gradient(
+      0deg,
+      hsl(0deg 0% 100% / 0%) 0 66px,
+      hsl(0deg 0% 100% / 16%) 66px 67px,
+      hsl(0deg 0% 100% / 0%) 67px 88px
+    ),
+    linear-gradient(
+      110deg,
+      hsl(0deg 0% 100% / 0%) 0 64%,
+      hsl(0deg 0% 100% / 18%) 64% 65%,
+      hsl(0deg 0% 100% / 0%) 65% 100%
+    );
+  background-size:
+    88px 88px,
+    88px 88px,
+    100% 100%;
+  mask-image: linear-gradient(
+    90deg,
+    hsl(0deg 0% 0% / 0%) 0%,
+    hsl(0deg 0% 0% / 100%) 16%,
+    hsl(0deg 0% 0% / 100%) 72%,
+    hsl(0deg 0% 0% / 0%) 100%
+  );
+  opacity: 0.72;
+  animation: coverGridDrift 24s linear infinite;
 }
 
 .mainArea {
@@ -177,5 +246,53 @@
     display: flex;
     flex-direction: column;
     gap: var(--spacing-8);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cover,
+  .cover::before,
+  .cover::after {
+    animation: none;
+  }
+}
+
+@keyframes coverGradientShift {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+@keyframes coverGridDrift {
+  from {
+    background-position:
+      0 0,
+      0 0,
+      0 0;
+  }
+
+  to {
+    background-position:
+      88px 44px,
+      44px 88px,
+      0 0;
+  }
+}
+
+@keyframes coverSignalFloat {
+  0%,
+  100% {
+    opacity: 0.86;
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+
+  50% {
+    opacity: 1;
+    transform: translate3d(-18px, 12px, 0) scale(1.04);
   }
 }
