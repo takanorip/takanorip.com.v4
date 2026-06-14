@@ -21,8 +21,8 @@
   );
   background-size: 180% 100%;
   border-radius: 0 380px 380px 0;
-  animation: coverGradientShift 18s var(--ease-in-out-cubic) infinite;
   isolation: isolate;
+  animation: cover-gradient-shift 18s var(--ease-in-out-cubic) infinite;
 }
 
 .cover::before,
@@ -65,7 +65,7 @@
       hsl(194deg 100% 80% / 0%) 24%
     );
   opacity: 0.9;
-  animation: coverSignalFloat 14s var(--ease-in-out-cubic) infinite;
+  animation: cover-signal-float 14s var(--ease-in-out-cubic) infinite;
 }
 
 .cover::after {
@@ -93,6 +93,7 @@
     88px 88px,
     88px 88px,
     100% 100%;
+  opacity: 0.72;
   mask-image: linear-gradient(
     90deg,
     hsl(0deg 0% 0% / 0%) 0%,
@@ -100,8 +101,7 @@
     hsl(0deg 0% 0% / 100%) 72%,
     hsl(0deg 0% 0% / 0%) 100%
   );
-  opacity: 0.72;
-  animation: coverGridDrift 24s linear infinite;
+  animation: cover-grid-drift 24s linear infinite;
 }
 
 .mainArea {
@@ -257,7 +257,7 @@
   }
 }
 
-@keyframes coverGradientShift {
+@keyframes cover-gradient-shift {
   0%,
   100% {
     background-position: 0% 50%;
@@ -268,7 +268,7 @@
   }
 }
 
-@keyframes coverGridDrift {
+@keyframes cover-grid-drift {
   from {
     background-position:
       0 0,
@@ -284,7 +284,7 @@
   }
 }
 
-@keyframes coverSignalFloat {
+@keyframes cover-signal-float {
   0%,
   100% {
     opacity: 0.86;
