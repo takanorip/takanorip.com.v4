@@ -23,7 +23,9 @@
   },
   "dependencies": {
     "@astrojs/react": "^4.4.2",
+    "@cloudflare/kumo": "^2.18.1",
     "@oddbird/popover-polyfill": "^0.6.1",
+    "@phosphor-icons/react": "^2.1.10",
     "@types/classnames": "^2.3.4",
     "@types/react-dom": "^19.2.3",
     "@types/three": "^0.182.0",
