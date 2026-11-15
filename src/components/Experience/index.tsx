@@ -30,10 +30,17 @@ const Experience = () => {
           onOpenChange={(open) => setActiveIndex(open ? index : null)}
         >
           <Collapsible.Trigger className={styles.summary}>
-            <span className={styles.company}>{item.company}</span>
-            <span className={styles.role}>{item.role}</span>
-            <span className={styles.period}>
-              {item.start} - {item.end || "Now"}
+            <span className={styles.heading}>
+              <span className={styles.company}>{item.company}</span>
+              <span className={styles.meta}>
+                <span className={styles.role}>{item.role}</span>
+                <span className={styles.period}>
+                  <span className={styles.separator} aria-hidden="true">
+                    ·
+                  </span>
+                  {item.start} – {item.end || "Now"}
+                </span>
+              </span>
             </span>
             <span className={styles.icon} aria-hidden="true">
               <svg
@@ -53,7 +60,7 @@ const Experience = () => {
               </svg>
             </span>
           </Collapsible.Trigger>
-          <Collapsible.Panel className={`${styles.panel} ${panelClassName}`}>
+          <Collapsible.Panel className={panelClassName}>
             <div className={styles.body}>
               {item.description.map((paragraph) => (
                 <p key={paragraph} className={styles.description}>

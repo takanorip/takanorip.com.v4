@@ -1,25 +1,17 @@
 .list {
-  display: grid;
-  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.6fr) max-content 20px;
-  column-gap: var(--spacing-2);
   width: 100%;
   max-width: 640px;
   border-top: 1px solid var(--alto);
 }
 
 .item {
-  display: grid;
-  grid-template-columns: subgrid;
-  grid-column: 1 / -1;
-  column-gap: var(--spacing-2);
   border-bottom: 1px solid var(--alto);
 }
 
 .summary {
   display: grid;
-  grid-template-columns: subgrid;
-  grid-column: 1 / -1;
-  column-gap: var(--spacing-2);
+  grid-template-columns: minmax(0, 1fr) 20px;
+  gap: var(--spacing-2);
   align-items: center;
   width: 100%;
   padding: var(--spacing-3) 0;
@@ -43,8 +35,19 @@
   outline-offset: 4px;
 }
 
+.summary[data-panel-open] {
+  padding-bottom: var(--spacing-2);
+}
+
+.heading {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-0);
+  min-width: 0;
+}
+
 .company {
-  font-size: var(--font-size-default);
+  font-size: var(--font-size-bold);
   line-height: 1.5;
   color: var(--bunker);
   transition: color 0.3s var(--ease-out-cubic);
@@ -55,16 +58,24 @@
   color: var(--science-blue);
 }
 
-.role,
-.period {
-  font-size: var(--font-size-default);
+.meta {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 0.6em;
+  align-items: baseline;
+  font-size: var(--font-size-small);
   line-height: 1.5;
   color: var(--scarpa-flow);
 }
 
 .period {
-  justify-self: end;
+  display: inline-flex;
+  column-gap: 0.6em;
   white-space: nowrap;
+}
+
+.separator {
+  color: var(--alto);
 }
 
 .icon {
@@ -77,15 +88,10 @@
   transform: rotate(180deg);
 }
 
-.panel {
-  grid-column: 1 / -1;
-}
-
 .body {
   display: flex;
   flex-direction: column;
   gap: var(--spacing-2);
-  padding-top: var(--spacing-3);
   padding-bottom: var(--spacing-3);
 }
 
@@ -96,45 +102,15 @@
 }
 
 @media screen and (width <= 767px) {
-  .list,
-  .item {
-    display: block;
-  }
-
   .summary {
-    grid-template-columns: minmax(0, 1fr) 20px;
-    gap: var(--spacing-0) var(--spacing-2);
-    align-items: start;
     padding: var(--spacing-2) 0;
   }
 
-  .panel {
-    grid-column: auto;
-  }
-
-  .role,
-  .period {
-    grid-column: 1;
-    font-size: var(--font-size-small);
-  }
-
-  .company {
-    font-size: var(--font-size-small);
-  }
-
-  .icon {
-    grid-row: 1 / span 3;
-    grid-column: 2;
-    align-self: center;
-  }
-
-  .period {
-    justify-self: start;
-    white-space: normal;
+  .summary[data-panel-open] {
+    padding-bottom: var(--spacing-1);
   }
 
   .body {
-    padding-top: var(--spacing-2);
     padding-bottom: var(--spacing-2);
   }
 }
