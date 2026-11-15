@@ -80,31 +80,6 @@
   color: var(--scarpa-flow);
 }
 
-.highlights {
-  display: flex;
-  flex-direction: column;
-  gap: var(--spacing-1);
-  padding: 0;
-  margin: 0;
-  list-style: none;
-}
-
-.highlights li {
-  position: relative;
-  padding-left: var(--spacing-2);
-  line-height: 1.7;
-}
-
-.highlights li::before {
-  position: absolute;
-  top: 0.75em;
-  left: 0;
-  width: 8px;
-  height: 1px;
-  content: "";
-  background-color: var(--science-blue);
-}
-
 @media screen and (width <= 767px) {
   .summary {
     grid-template-columns: minmax(0, 1fr) 20px;

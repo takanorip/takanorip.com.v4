@@ -55,14 +55,11 @@ const Experience = () => {
           </Collapsible.Trigger>
           <Collapsible.Panel className={panelClassName}>
             <div className={styles.body}>
-              <p className={styles.description}>{item.description}</p>
-              {item.highlights && item.highlights.length > 0 && (
-                <ul className={styles.highlights}>
-                  {item.highlights.map((highlight) => (
-                    <li key={highlight}>{highlight}</li>
-                  ))}
-                </ul>
-              )}
+              {item.description.map((paragraph) => (
+                <p key={paragraph} className={styles.description}>
+                  {paragraph}
+                </p>
+              ))}
             </div>
           </Collapsible.Panel>
         </Collapsible.Root>
