@@ -11,19 +11,17 @@
   grid-template-columns: minmax(140px, 1.1fr) minmax(180px, 1.6fr) auto 20px;
   gap: var(--spacing-2);
   align-items: center;
+  width: 100%;
   padding: var(--spacing-3) 0;
+  margin: 0;
+  font-family: inherit;
+  font-size: inherit;
   font-weight: normal;
   color: inherit;
+  text-align: left;
   cursor: pointer;
-  list-style: none;
-}
-
-.summary::-webkit-details-marker {
-  display: none;
-}
-
-.summary::marker {
-  content: "";
+  background: none;
+  border: 0;
 }
 
 .summary:focus {
@@ -42,7 +40,7 @@
   transition: color 0.3s var(--ease-out-cubic);
 }
 
-.item[open] .company,
+.summary[data-panel-open] .company,
 .summary:hover .company {
   color: var(--science-blue);
 }
@@ -64,7 +62,7 @@
   transition: transform 0.3s var(--ease-out-cubic);
 }
 
-.item[open] .icon {
+.summary[data-panel-open] .icon {
   transform: rotate(180deg);
 }
 

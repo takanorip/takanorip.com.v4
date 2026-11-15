@@ -1,17 +1,35 @@
+import { useState } from "react";
+import { Collapsible } from "@cloudflare/kumo/components/collapsible";
+import "@cloudflare/kumo/styles/standalone";
 import styles from "./styles.module.css";
 import { experiences } from "./data";
 
+const panelClassName = [
+  "h-[var(--collapsible-panel-height)]",
+  "overflow-hidden",
+  "transition-[height,opacity]",
+  "duration-100",
+  "ease-out",
+  "data-starting-style:h-0",
+  "data-starting-style:opacity-0",
+  "data-ending-style:h-0",
+  "data-ending-style:opacity-0",
+  "[&[hidden]:not([hidden='until-found'])]:hidden",
+].join(" ");
+
 const Experience = () => {
+  const [activeIndex, setActiveIndex] = useState<number | null>(0);
+
   return (
     <div className={styles.list}>
       {experiences.map((item, index) => (
-        <details
+        <Collapsible.Root
           key={item.company}
           className={styles.item}
-          name="experience"
-          open={index === 0}
+          open={activeIndex === index}
+          onOpenChange={(open) => setActiveIndex(open ? index : null)}
         >
-          <summary className={styles.summary}>
+          <Collapsible.Trigger className={styles.summary}>
             <span className={styles.company}>{item.company}</span>
             <span className={styles.role}>{item.role}</span>
             <span className={styles.period}>
@@ -34,18 +52,20 @@ const Experience = () => {
                 />
               </svg>
             </span>
-          </summary>
-          <div className={styles.body}>
-            <p className={styles.description}>{item.description}</p>
-            {item.highlights && item.highlights.length > 0 && (
-              <ul className={styles.highlights}>
-                {item.highlights.map((highlight) => (
-                  <li key={highlight}>{highlight}</li>
-                ))}
-              </ul>
-            )}
-          </div>
-        </details>
+          </Collapsible.Trigger>
+          <Collapsible.Panel className={panelClassName}>
+            <div className={styles.body}>
+              <p className={styles.description}>{item.description}</p>
+              {item.highlights && item.highlights.length > 0 && (
+                <ul className={styles.highlights}>
+                  {item.highlights.map((highlight) => (
+                    <li key={highlight}>{highlight}</li>
+                  ))}
+                </ul>
+              )}
+            </div>
+          </Collapsible.Panel>
+        </Collapsible.Root>
       ))}
     </div>
   );
