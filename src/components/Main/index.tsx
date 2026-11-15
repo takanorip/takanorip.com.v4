@@ -7,12 +7,18 @@ import Links from "../Links/index";
 import ArrowRight from "../Svg/ArrowRight";
 import styles from "./styles.module.css";
 import { FC } from "react";
+import type { Work } from "../../lib/cms";
+import type { Locale } from "../../i18n/path";
+import { localizeHref } from "../../i18n/path";
+import { ui } from "../../i18n/ui";
 
 type Props = {
-  works: any;
+  works: Work[];
+  locale: Locale;
 };
 
-const Main: FC<Props> = ({ works }) => {
+const Main: FC<Props> = ({ works, locale }) => {
+  const copy = ui[locale];
   const featuredWorks = works.filter((item) => item.isFeatured);
 
   return (
@@ -40,45 +46,49 @@ const Main: FC<Props> = ({ works }) => {
             />
           </figure>
           <div>
-            <h3>takanorip / 大木尊紀</h3>
+            <h3>{copy.aboutName}</h3>
             <p>
-              デジタルプロダクトデザイナー
+              {copy.aboutRole1}
               <br />
-              ソフトウェアエンジニア
+              {copy.aboutRole2}
             </p>
           </div>
           <p>
-            WebフロントエンドエンジニアからUIデザイナーを経て、デジタルプロダクトデザイナーとして働いています。
+            {copy.aboutBio1}
             <br />
-            デザインとエンジニアリングの狭間をつなぎプロダクトの価値を高める仕事が得意です。
+            {copy.aboutBio2}
           </p>
           <Links />
         </div>
       </section>
       <section className={styles.section}>
         <h2 className={styles.title}>Service</h2>
-        <Service />
+        <Service locale={locale} />
       </section>
       <section className={styles.section}>
         <h2 className={styles.title}>Activity</h2>
-        <Activity />
+        <Activity locale={locale} />
       </section>
       <section className={styles.section}>
         <h2 className={styles.title}>Featured works</h2>
         <div className={styles.works}>
           {featuredWorks.map((item) => (
-            <WorkItem key={item.title} item={item} />
+            <WorkItem key={item.id} item={item} locale={locale} />
           ))}
         </div>
         <div className={styles.buttonWrapper}>
-          <Button className={styles.button} to="/works" icon={<ArrowRight />}>
+          <Button
+            className={styles.button}
+            to={localizeHref("/works", locale)}
+            icon={<ArrowRight />}
+          >
             View all works
           </Button>
         </div>
       </section>
       <section className={styles.section}>
         <h2 className={styles.title}>Experience</h2>
-        <Experience />
+        <Experience locale={locale} />
       </section>
     </main>
   );

@@ -2,15 +2,22 @@ import type { FC } from "react";
 import { format, addHours } from "date-fns";
 import cx from "classnames";
 import styles from "./styles.module.css";
+import type { Work } from "../../lib/cms";
+import type { Locale } from "../../i18n/path";
+import { localizeHref } from "../../i18n/path";
 
 type Props = {
-  item: any;
+  item: Work;
+  locale: Locale;
   className?: string;
 };
 
-const WorkItem: FC<Props> = ({ item, className }) => {
+const WorkItem: FC<Props> = ({ item, locale, className }) => {
   return (
-    <a href={`/works/${item.id}`} className={cx(styles.card, className)}>
+    <a
+      href={localizeHref(`/works/${item.id}`, locale)}
+      className={cx(styles.card, className)}
+    >
       <figure className={styles.imageWrapper}>
         <img
           loading="lazy"

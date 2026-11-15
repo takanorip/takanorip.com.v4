@@ -1,32 +1,5 @@
 ---
-import MainHead from "../../components/MainHead.astro";
-import Footer from "../../components/Footer/index";
-import Header from "../../components/Header/index";
-import Works from "../../components/Works/index";
-
-interface MarkdownFrontmatter {
-  publishDate: number;
-}
-
-const apiUrl = "https://takanorip.microcms.io/api/v1/works?limit=1000";
-const baseHeaders = {
-  headers: { "X-MICROCMS-API-KEY": "d40081c2-4d7e-4e26-a730-330f9b7fb70e" },
-};
-
-const response = await fetch(apiUrl, baseHeaders);
-const data = await response.json();
+import WorksIndex from "../../views/WorksIndex.astro";
 ---
 
-<html lang="en">
-  <head>
-    <MainHead
-      title="Works | office takanorip"
-      description="This is a list of takanorip's works."
-    />
-  </head>
-  <body>
-    <Header dir="works" client:visible />
-    <Works works={data.contents} client:visible />
-    <Footer />
-  </body>
-</html>
+<WorksIndex locale="ja" />

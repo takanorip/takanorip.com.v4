@@ -13,7 +13,11 @@ const { content } = Astro.props;
     <style></style>
   </head>
   <body>
-    <Header dir="works" />
+    <Header
+      dir="works"
+      locale={content.lang === "en" ? "en" : "ja"}
+      pathname={Astro.url.pathname}
+    />
     <header style={`background-image:url(${content.img})`} class="hero">
       <h1 class="title">{content.title}</h1>
     </header>

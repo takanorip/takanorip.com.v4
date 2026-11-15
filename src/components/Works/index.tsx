@@ -2,8 +2,15 @@ import { useState, useEffect } from "react";
 import cx from "classnames";
 import WorkItem from "../../components/WorkItem/index";
 import styles from "./styles.module.css";
+import type { Work } from "../../lib/cms";
+import type { Locale } from "../../i18n/path";
 
-const Works = ({ works }) => {
+type Props = {
+  works: Work[];
+  locale: Locale;
+};
+
+const Works = ({ works, locale }: Props) => {
   const categoryList = ["Design", "Development", "Speaking", "Writing"];
   const [animate, setAnimate] = useState(false);
   const [filteredWorks, setFilteredWorks] = useState(works);
@@ -56,7 +63,7 @@ const Works = ({ works }) => {
       </div>
       <div className={cx(styles.grid, { [styles.animate]: animate })}>
         {filteredWorks.map((item) => (
-          <WorkItem key={item.title} item={item} />
+          <WorkItem key={item.id} item={item} locale={locale} />
         ))}
       </div>
     </div>

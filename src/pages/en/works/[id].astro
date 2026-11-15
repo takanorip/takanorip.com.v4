@@ -1,0 +1,10 @@
+---
+import { getWorkStaticPaths } from "../../../lib/cms";
+import WorkDetail from "../../../views/WorkDetail.astro";
+
+export const getStaticPaths = getWorkStaticPaths;
+
+const { item, spekerdeckInfo } = Astro.props;
+---
+
+<WorkDetail locale="en" item={item} spekerdeckInfo={spekerdeckInfo} />

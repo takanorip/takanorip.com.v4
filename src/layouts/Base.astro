@@ -1,0 +1,41 @@
+---
+import MainHead from "../components/MainHead.astro";
+import Header from "../components/Header/index";
+import Footer from "../components/Footer/index";
+import type { Locale } from "../i18n/path";
+
+interface Props {
+  locale: Locale;
+  dir?: string;
+  title?: string;
+  description?: string;
+  showFooter?: boolean;
+  pathname?: string;
+}
+
+const {
+  locale,
+  dir = "",
+  title,
+  description,
+  showFooter = true,
+  pathname = Astro.url.pathname,
+} = Astro.props;
+---
+
+<html lang={locale}>
+  <head>
+    <MainHead
+      title={title}
+      description={description}
+      locale={locale}
+      pathname={pathname}
+    />
+    <slot name="head" />
+  </head>
+  <body>
+    <Header dir={dir} locale={locale} pathname={pathname} client:visible />
+    <slot />
+    {showFooter && <Footer />}
+  </body>
+</html>
