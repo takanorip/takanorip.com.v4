@@ -53,7 +53,7 @@ const Experience = () => {
               </svg>
             </span>
           </Collapsible.Trigger>
-          <Collapsible.Panel className={panelClassName}>
+          <Collapsible.Panel className={`${styles.panel} ${panelClassName}`}>
             <div className={styles.body}>
               {item.description.map((paragraph) => (
                 <p key={paragraph} className={styles.description}>
