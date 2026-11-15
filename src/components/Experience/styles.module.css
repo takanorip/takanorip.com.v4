@@ -1,4 +1,6 @@
 .list {
+  width: 100%;
+  max-width: 640px;
   border-top: 1px solid var(--alto);
 }
 
@@ -70,7 +72,6 @@
   display: flex;
   flex-direction: column;
   gap: var(--spacing-2);
-  max-width: 640px;
   padding-bottom: var(--spacing-4);
 }
 
@@ -109,7 +110,6 @@
   }
 
   .body {
-    max-width: 100%;
     padding-bottom: var(--spacing-3);
   }
 }
