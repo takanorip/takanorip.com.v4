@@ -1,18 +1,45 @@
 ---
 import "../styles/global.css";
+import { ui } from "../i18n/ui";
+import { localizeHref, type Locale } from "../i18n/path";
+
+interface Props {
+  title?: string;
+  description?: string;
+  locale?: Locale;
+  pathname?: string;
+}
+
 const {
-  title = "office takanorip",
-  description = "The Portfolio of takanrip, a Design Engeneer",
+  title = ui.ja.metaTitle,
+  description = ui.ja.metaDescription,
+  locale = "ja",
+  pathname = "/",
 } = Astro.props;
+
+const origin = Astro.site?.origin ?? "https://takanorip.com";
+const canonical = new URL(localizeHref(pathname, locale), origin).href;
+const jaUrl = new URL(localizeHref(pathname, "ja"), origin).href;
+const enUrl = new URL(localizeHref(pathname, "en"), origin).href;
 ---
 
 <meta charset="UTF-8" />
 <meta name="description" property="og:description" content={description} />
 <meta property="og:image" content="https://takanorip.com/assets/ogp.png" />
 <meta property="og:image:alt" content="office takanorip" />
+<meta property="og:url" content={canonical} />
+<meta property="og:locale" content={locale === "ja" ? "ja_JP" : "en_US"} />
+<meta
+  property="og:locale:alternate"
+  content={locale === "ja" ? "en_US" : "ja_JP"}
+/>
 <meta name="viewport" content="width=device-width" />
 <title>{title}</title>
 <meta name="twitter:card" content="summary_large_image" />
+<link rel="canonical" href={canonical} />
+<link rel="alternate" hreflang="ja" href={jaUrl} />
+<link rel="alternate" hreflang="en" href={enUrl} />
+<link rel="alternate" hreflang="x-default" href={jaUrl} />
 
 <link rel="icon" type="image/x-icon" href="/favicon.ico" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />

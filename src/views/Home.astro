@@ -1,0 +1,49 @@
+---
+import Base from "../layouts/Base.astro";
+import Main from "../components/Main/index";
+import { fetchWorks } from "../lib/cms";
+import { localizeWork } from "../i18n/works";
+import { ui } from "../i18n/ui";
+import type { Locale } from "../i18n/path";
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const copy = ui[locale];
+const works = (await fetchWorks()).map((work) => localizeWork(work, locale));
+---
+
+<Base
+  locale={locale}
+  dir="about"
+  title={copy.metaTitle}
+  description={copy.metaDescription}
+>
+  <div class="about">
+    <Main works={works} locale={locale} />
+  </div>
+</Base>
+
+<style>
+  .about {
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing-5);
+    padding: 64px 0 var(--spacing-13);
+  }
+  @media screen and (max-width: 1007px) {
+    .about {
+      padding: 64px 0 var(--spacing-8);
+    }
+    .aside {
+      display: none;
+    }
+  }
+  @media screen and (max-width: 767px) {
+    .about {
+      padding: 48px 0 var(--spacing-13);
+    }
+  }
+</style>

@@ -1,0 +1,27 @@
+---
+import Base from "../layouts/Base.astro";
+import Work from "../components/Work/index";
+import { localizeWork } from "../i18n/works";
+import type { Locale } from "../i18n/path";
+import type { SpeakerDeckInfo, Work as WorkItem } from "../lib/cms";
+
+interface Props {
+  locale: Locale;
+  item: WorkItem;
+  spekerdeckInfo: SpeakerDeckInfo;
+}
+
+const { locale, item, spekerdeckInfo } = Astro.props;
+const work = localizeWork(item, locale);
+const strippedDescription = work.description.replace(/(<([^>]+)>)/gi, "");
+---
+
+<Base
+  locale={locale}
+  dir="works"
+  title={`${work.title} | office takanorip`}
+  description={strippedDescription}
+  showFooter={false}
+>
+  <Work data={work} spekerdeckInfo={spekerdeckInfo} locale={locale} />
+</Base>

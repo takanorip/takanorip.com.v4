@@ -1,22 +1,30 @@
 import styles from "./styles.module.css";
 import { experiences } from "./data";
+import type { Locale } from "../../i18n/path";
+import { ui } from "../../i18n/ui";
 
-const Experience = () => {
+type Props = {
+  locale: Locale;
+};
+
+const Experience = ({ locale }: Props) => {
+  const copy = ui[locale];
+
   return (
     <div className={styles.wrapper}>
       <table className={styles.table}>
         <thead>
           <tr>
-            <th className={styles.headerCompany}>会社名</th>
-            <th className={styles.headerRole}>役職</th>
-            <th className={styles.headerPeriod}>期間</th>
+            <th className={styles.headerCompany}>{copy.experienceCompany}</th>
+            <th className={styles.headerRole}>{copy.experienceRole}</th>
+            <th className={styles.headerPeriod}>{copy.experiencePeriod}</th>
           </tr>
         </thead>
         <tbody>
           {experiences.map((item) => (
             <tr key={item.company} className={styles.row}>
               <td className={styles.company}>{item.company}</td>
-              <td className={styles.role}>{item.role}</td>
+              <td className={styles.role}>{item.role[locale]}</td>
               <td className={styles.period}>
                 {item.start} - {item.end || "Now"}
               </td>

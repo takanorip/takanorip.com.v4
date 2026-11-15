@@ -1,15 +1,20 @@
 import { FC } from "react";
 import Button from "../Button/index";
-import ExternalLink from "../Svg/ExternalLink";
 import styles from "./styles.module.css";
 import { format, addHours } from "date-fns";
+import type { SpeakerDeckInfo, Work as WorkData } from "../../lib/cms";
+import type { Locale } from "../../i18n/path";
+import { localizeHref } from "../../i18n/path";
+import { ui } from "../../i18n/ui";
 
 type Props = {
-  data: any;
-  spekerdeckInfo: any;
+  data: WorkData;
+  spekerdeckInfo: SpeakerDeckInfo;
+  locale: Locale;
 };
 
-const Work: FC<Props> = ({ data, spekerdeckInfo }) => {
+const Work: FC<Props> = ({ data, spekerdeckInfo, locale }) => {
+  const copy = ui[locale];
   return (
     <div className={styles.wrapper}>
       <div className={styles.titleWrapper}>
@@ -33,7 +38,7 @@ const Work: FC<Props> = ({ data, spekerdeckInfo }) => {
           {data.link && !spekerdeckInfo && (
             <div className={styles.button}>
               <Button className={styles.detailButton} to={data.link}>
-                詳細を見る
+                {copy.viewDetails}
               </Button>
             </div>
           )}
@@ -44,7 +49,7 @@ const Work: FC<Props> = ({ data, spekerdeckInfo }) => {
           <iframe
             className="speakerdeck-iframe"
             src={spekerdeckInfo.link}
-            title={spekerdeckInfo.title}
+            title={data.title}
             allowFullScreen
           />
         ) : (
@@ -57,8 +62,8 @@ const Work: FC<Props> = ({ data, spekerdeckInfo }) => {
           dangerouslySetInnerHTML={{ __html: data.description }}
         ></div>
       </div>
-      <a href="/works" className={styles.backToWorks}>
-        一覧へ戻る
+      <a href={localizeHref("/works", locale)} className={styles.backToWorks}>
+        {copy.backToWorks}
       </a>
     </div>
   );

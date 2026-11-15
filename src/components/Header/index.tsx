@@ -2,12 +2,48 @@ import "@oddbird/popover-polyfill";
 import styles from "./styles.module.css";
 import ExternalLink from "../Svg/ExternalLink";
 import cx from "classnames";
+import type { Locale } from "../../i18n/path";
+import { localizeHref } from "../../i18n/path";
 
 type HeaderProps = {
   dir: string;
+  locale: Locale;
+  pathname: string;
 };
 
-const Header = ({ dir }: HeaderProps) => {
+const LocaleSwitch = ({
+  locale,
+  pathname,
+}: {
+  locale: Locale;
+  pathname: string;
+}) => {
+  return (
+    <nav
+      className={styles.locale}
+      aria-label={locale === "ja" ? "言語" : "Language"}
+    >
+      <a
+        href={localizeHref(pathname, "ja")}
+        hrefLang="ja"
+        lang="ja"
+        aria-current={locale === "ja" ? "page" : undefined}
+      >
+        JA
+      </a>
+      <a
+        href={localizeHref(pathname, "en")}
+        hrefLang="en"
+        lang="en"
+        aria-current={locale === "en" ? "page" : undefined}
+      >
+        EN
+      </a>
+    </nav>
+  );
+};
+
+const Header = ({ dir, locale, pathname }: HeaderProps) => {
   return (
     <header className={styles.header}>
       <div className={styles.wrapper}>
@@ -39,51 +75,55 @@ const Header = ({ dir }: HeaderProps) => {
             </svg>
           </p>
         </a>
-        <div className={cx(styles.menuWrapper, styles.spOnly)}>
-          <button
-            className={styles.button}
-            role="button"
-            popoverTarget="sp-menu"
-          >
-            menu
-          </button>
-          <nav className={styles.menu} popover="auto" id="sp-menu">
-            <a
-              className={cx(styles.menuItem, {
-                [styles.current]: dir === "about",
-              })}
-              href="/"
+        <div className={styles.mobileTools}>
+          <LocaleSwitch locale={locale} pathname={pathname} />
+          <div className={cx(styles.menuWrapper, styles.spOnly)}>
+            <button
+              className={styles.button}
+              role="button"
+              popoverTarget="sp-menu"
             >
-              about
-            </a>
-            <a
-              className={cx(styles.menuItem, {
-                [styles.current]: dir === "works",
-              })}
-              href="/works"
-            >
-              works
-            </a>
-            <a
-              className={cx(styles.menuItem, styles.navItemBlog)}
-              href="https://blog.takanorip.com"
-            >
-              blog
-              <ExternalLink />
-            </a>
-          </nav>
+              menu
+            </button>
+            <nav className={styles.menu} popover="auto" id="sp-menu">
+              <a
+                className={cx(styles.menuItem, {
+                  [styles.current]: dir === "about",
+                })}
+                href={localizeHref("/", locale)}
+              >
+                about
+              </a>
+              <a
+                className={cx(styles.menuItem, {
+                  [styles.current]: dir === "works",
+                })}
+                href={localizeHref("/works", locale)}
+              >
+                works
+              </a>
+              <a
+                className={cx(styles.menuItem, styles.navItemBlog)}
+                href="https://blog.takanorip.com"
+              >
+                blog
+                <ExternalLink />
+              </a>
+            </nav>
+          </div>
         </div>
       </div>
       <nav className={cx(styles.nav, { [styles.open]: dir === "about" })}>
+        <LocaleSwitch locale={locale} pathname={pathname} />
         <a
           className={cx(styles.navItem, { [styles.active]: dir === "about" })}
-          href="/"
+          href={localizeHref("/", locale)}
         >
           about
         </a>
         <a
           className={cx(styles.navItem, { [styles.active]: dir === "works" })}
-          href="/works"
+          href={localizeHref("/works", locale)}
         >
           works
         </a>

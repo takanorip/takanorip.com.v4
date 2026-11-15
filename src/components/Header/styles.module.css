@@ -25,6 +25,38 @@
 .nav {
   display: flex;
   gap: var(--spacing-1);
+  align-items: center;
+}
+
+.mobileTools {
+  display: none;
+}
+
+.locale {
+  display: flex;
+  align-items: center;
+}
+
+.locale a {
+  display: flex;
+  align-items: center;
+  height: 3rem;
+  padding: 0 var(--spacing-1);
+  font-size: var(--font-size-small);
+  color: var(--scarpa-flow);
+  letter-spacing: 0.8px;
+}
+
+.locale a[aria-current="page"] {
+  color: var(--bunker);
+  text-decoration: underline;
+  text-decoration-thickness: 4px;
+  text-decoration-color: var(--science-blue);
+  text-underline-offset: var(--spacing-1);
+}
+
+.locale a:hover {
+  background-color: var(--solitude);
 }
 
 .navItem {
@@ -142,6 +174,12 @@ a.menuItem {
 
   .spOnly {
     display: block;
+  }
+
+  .mobileTools {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
   }
 
   .wrapper {
